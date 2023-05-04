@@ -8,7 +8,7 @@ thumbnail: KT-6677.jpg
 kt: 6677
 keywords: Héroe
 exl-id: 61a9a2d1-94c3-41c2-8f90-a56a938ef245
-source-git-commit: 799b37e526073893fe7c078db547798d6c31d1b2
+source-git-commit: c1937561d607f1eabbc1921d6090858abb13f0d3
 workflow-type: tm+mt
 source-wordcount: '600'
 ht-degree: 4%
@@ -30,7 +30,9 @@ En este tutorial se describen los conceptos básicos sobre cómo ejecutar la pri
 Utilice los siguientes tutoriales de introducción para crear credenciales de API, descargar archivos de muestra y configurar el entorno.
 
 [Introducción a la API de servicios de PDF y Java](gettingstartedjava.md)
+
 [Introducción a la API de servicios de PDF y .Net](gettingstartednet.md)
+
 [Introducción a la API de servicios de PDF y Node.js](createpdffromhtml.md)
 
 ## Ejecute el ejemplo de OCR proporcionado en los archivos de muestra
