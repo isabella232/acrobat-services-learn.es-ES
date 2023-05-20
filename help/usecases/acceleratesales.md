@@ -275,7 +275,7 @@ Acrobat Sign proporciona otros tipos de campos que puede colocar, como los campo
 1. Mueva el cursor por encima de la ubicación Fecha en el documento.
 1. Seleccionar **[!UICONTROL Insertar etiqueta de texto de Adobe Sign]**.
 
-![Captura de pantalla de la etiqueta de fecha del documento](assets/accsales_16.png)
+![Captura de pantalla de la etiqueta de fecha en el documento](assets/accsales_16.png)
 
 ## Generar el acuerdo
 
