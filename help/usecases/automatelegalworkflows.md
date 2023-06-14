@@ -7,9 +7,9 @@ type: Tutorial
 thumbnail: KT-10202.jpg
 kt: 10202
 exl-id: 2a1752b8-9641-40cc-a0af-1dce6cf49346
-source-git-commit: 799b37e526073893fe7c078db547798d6c31d1b2
+source-git-commit: 98dc9f98f660b43d2ca0780b51624bf3be71c853
 workflow-type: tm+mt
-source-wordcount: '2893'
+source-wordcount: '2876'
 ht-degree: 1%
 
 ---
@@ -495,7 +495,7 @@ Una vez cargado un documento, debe enviar el acuerdo para su firma.
 
 Una vez que tenga un ID de acuerdo, puede enviar el estado de un acuerdo.
 
-1. Expandir **[!UICONTROL GET /agreements/{agreementId}]**.
+1. Expandir **[!UICONTROL GET /acuerdos/{agreementId}]**.
 1. Como puede que necesite un ámbito de OAUTH adicional, seleccione **[!UICONTROL OAUTH-ACCESS-TOKEN]** otra vez.
 1. Copie el agreementId de la respuesta de llamada de API anterior en el campo agreementId.
 1. Seleccionar **[!UICONTROL ¡Pruébalo!]**.
@@ -551,13 +551,13 @@ Ahora tiene información sobre ese acuerdo.
   }
 ```
 
-El método más eficaz para obtener notificaciones cuando se cambian las actualizaciones es a través de Webhooks, sobre los que puede obtener más información [aquí](https://opensource.adobe.com/acrobat-sign/developer_guide/webhookapis.html) y una lista completa de los eventos webhook disponibles [aquí](https://opensource.adobe.com/acrobat-sign/developer_guide/webhookevents.html).
+El método más eficaz para obtener notificaciones cuando se cambian las actualizaciones es a través de Webhooks, sobre los que puede obtener más información [aquí](https://opensource.adobe.com/acrobat-sign/developer_guide/webhookapis.html.
 
 ## Almacenar un documento firmado
 
 Una vez firmado el documento, se puede recuperar mediante el archivo GET /agreements/combinedDocument.
 
-1. Expandir **[!UICONTROL GET /agreements/{agreementId}/combinedDocument]**.
+1. Expandir **[!UICONTROL GET /acuerdos/{agreementId}/combinedDocument]**.
 1. Conjunto **[!UICONTROL agreementId]** a la *agreementId* proporcionada por la llamada de API anterior.
 1. Seleccionar **[!UICONTROL ¡Pruébalo!]**.
 
