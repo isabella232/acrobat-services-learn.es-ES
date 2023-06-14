@@ -6,10 +6,10 @@ role: Developer
 skill: Beginner, Intermediate, Experienced
 thumbnail: KT-11079.jpg
 exl-id: 79603883-26cd-439c-9cfd-6178c4544b93
-source-git-commit: 0c434db1665d4cb6ce6aff6f329e300f22129df9
+source-git-commit: 744830d00c75c136354ca41893337e6a474d5aed
 workflow-type: tm+mt
 source-wordcount: '227'
-ht-degree: 2%
+ht-degree: 11%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 2%
 
 ![Banner de API de Acrobat Sign](../assets/acrobatsignhero.png)
 
-Las API de Acrobat Sign le permiten crear aplicaciones e integrar la interfaz de usuario y la funcionalidad de Acrobat Sign en sus aplicaciones.
+Las API de Acrobat Sign le permiten crear aplicaciones e integrar la IU y la funcionalidad de Acrobat Sign en sus aplicaciones.
 
 ## Introducción
 
