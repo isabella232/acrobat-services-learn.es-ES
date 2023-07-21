@@ -5,9 +5,9 @@ role: Developer
 level: Intermediate
 type: Tutorial
 thumbnail: KT-8092.jpg
-kt: 8092
+jira: KT-8092
 exl-id: 0e24c8fd-7fda-452c-96f9-1e7ab1e06922
-source-git-commit: 799b37e526073893fe7c078db547798d6c31d1b2
+source-git-commit: 2d1151c17dfcfa67aca05411976f4ef17adf421b
 workflow-type: tm+mt
 source-wordcount: '1527'
 ht-degree: 0%
@@ -199,7 +199,7 @@ Para almacenar el PDF en la tabla de base de datos, modifique la función de car
   result.writeToStream(writableStream);
 ```
 
-Para escribir el contenido, cree un objeto WritableStreamBuffer. Con el evento finish, es hora de ejecutar la consulta SQL. El paquete node-postgres convierte automáticamente el parámetro Buffer al formato BYTEA. La consulta redirige al usuario a /job/{id}, un extremo creado posteriormente.
+Para escribir el contenido, cree un objeto WritableStreamBuffer. Con el evento finish, es hora de ejecutar la consulta SQL. El paquete node-postgres convierte automáticamente el parámetro Buffer al formato BYTEA. La consulta redirige al usuario a /job/{id}, un punto final creado más tarde.
 
 Para la API de incrustación de PDF, también necesita un extremo que devuelva solo el contenido del PDF:
 
@@ -220,7 +220,7 @@ Para la API de incrustación de PDF, también necesita un extremo que devuelva s
 
 ## Incorporación del PDF
 
-Ahora, cree el extremo /job/{id}, que representa una plantilla que contiene el nombre del registro de trabajo solicitado y un PDF incrustado.
+A continuación, cree la carpeta /job/{id} extremo, que representa una plantilla que contiene el nombre del registro de trabajo solicitado y un PDF incrustado.
 
 ```
 router.get('/job/:id', async function(req, res, next) {
