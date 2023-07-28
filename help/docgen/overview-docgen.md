@@ -4,10 +4,11 @@ description: Información general sobre los tutoriales de la API de generación 
 type: Tutorial
 role: Developer
 level: Beginner, Intermediate, Experienced
+feature: Document Generation API
 thumbnail: KT-7480.jpg
 kt: 7480
 exl-id: 519a41a2-33af-4022-8919-2cb69995c46c
-source-git-commit: 0c434db1665d4cb6ce6aff6f329e300f22129df9
+source-git-commit: b65ffa3efa3978587564eb0be0c0e7381c8c83ab
 workflow-type: tm+mt
 source-wordcount: '307'
 ht-degree: 0%
@@ -80,15 +81,15 @@ La API de generación de documentos acepta una plantilla de documento (con etiqu
     <div>
    <a href="taggercalculations.md"><strong>Definición de etiquetas de cálculo numérico</strong></a>
     </div>
-    <em>Aprenda a establecer etiquetas de cálculo numérico en plantillas de Microsoft Word mediante el etiquetador de generación de documentos de Adobe para calcular agregaciones o aritmética de valores de datos mediante la API de generación de documentos de Adobe</em>
+    <em>Aprenda a establecer etiquetas de cálculo numérico en las plantillas de Microsoft Word mediante el etiquetador de generación de documentos de Adobe para calcular agregaciones o aritmética de valores de datos mediante la API de generación de documentos de Adobe</em>
     <br>
   </td>
   <td>
    <a href="taggerconditional.md">
-      <img alt="Establecer contenido condicional" src="assets/Taggerconditional_thumb.png" />
+      <img alt="Configuración del contenido condicional" src="assets/Taggerconditional_thumb.png" />
    </a>
     <div>
-   <a href="taggerconditional.md"><strong>Establecer contenido condicional</strong></a>
+   <a href="taggerconditional.md"><strong>Configuración del contenido condicional</strong></a>
     </div>
     <em>Aprenda a definir secciones en plantillas de Microsoft Word mediante el etiquetador de generación de documentos de Adobe para incluir o excluir dinámicamente secciones de un documento basadas en datos mediante la API de generación de documentos de Adobe</em>
     <br>

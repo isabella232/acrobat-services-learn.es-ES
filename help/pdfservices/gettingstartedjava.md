@@ -4,17 +4,18 @@ description: Los desarrolladores pueden empezar en solo unos minutos con los arc
 type: Tutorial
 role: Developer
 level: Beginner
+feature: PDF Services API
 thumbnail: KT-6676.jpg
 kt: 6676
 exl-id: 4a8f2119-c464-496b-bdc8-35dd387bef25
-source-git-commit: 799b37e526073893fe7c078db547798d6c31d1b2
+source-git-commit: b65ffa3efa3978587564eb0be0c0e7381c8c83ab
 workflow-type: tm+mt
 source-wordcount: '501'
 ht-degree: 0%
 
 ---
 
-# Introducción a la API de Adobe PDF Services y Java
+# Introducción a la API de servicios de Adobe PDF y Java
 
 ![Crear imagen de héroe de PDF](assets/GettingStartedJava_hero.jpg)
 
@@ -22,7 +23,7 @@ Los desarrolladores pueden empezar en solo unos minutos con los archivos de mues
 
 ## Paso 1: Obtener credenciales y descargar archivos de muestra
 
-El primer paso es obtener una credencial (clave de API) para desbloquear el uso. [Suscríbase a la prueba gratuita aquí](https://www.adobe.io/apis/documentcloud/dcsdk/gettingstarted.html) y haz clic en &#39;Empezar&#39; para crear tus nuevas credenciales.
+El primer paso es obtener una credencial (clave de API) para desbloquear el uso. [Suscríbase a la prueba gratuita aquí](https://www.adobe.io/apis/documentcloud/dcsdk/gettingstarted.html) y haz clic en &#39;Comenzar&#39; para crear tus nuevas credenciales.
 
 ![Paso 1](assets/GettingStartedJava_step1.png)
 
@@ -40,7 +41,7 @@ A continuación, seleccione Java como idioma para recibir los ejemplos específi
 
 Recibirá un archivo .zip para descargar denominado PDFToolsSDK-JavaSamples.zip que se puede guardar en su sistema de archivos local.
 
-## Paso 2: Configuración del entorno Java
+## Paso 2: Configurar el entorno Java
 
 1. Instalar [Java 8 o superior](https://www.oracle.com/java/technologies/javase-downloads.html) si no lo has hecho ya.
 1. Ejecutar `javac -version` para verificar su instalación.
@@ -50,12 +51,12 @@ Recibirá un archivo .zip para descargar denominado PDFToolsSDK-JavaSamples.zip 
 Los ejemplos personalizados proporcionan todo, desde código de ejemplo listo para ejecutarse, un archivo json de credenciales incrustado y conexiones preconfiguradas a dependencias.
 
 1. Descargar [el proyecto de muestra](https://github.com/adobe/pdftools-java-sdk-samples).
-1. Cree el proyecto de ejemplo con Maven: instalación limpia de mvn.
-1. Pruebe el código de ejemplo en la línea de comandos o en el IDE que prefiera.
+1. Cree el proyecto de muestra con Maven: mvn clean install.
+1. Pruebe el código de ejemplo en la línea de comandos o en su IDE preferido.
 
 ## Pensamientos finales
 
-La API de servicios de PDF puede ayudarte a eliminar procesos manuales automatizando flujos de trabajo comunes y desplazando la carga de procesamiento a la nube. En un mundo en el que cada navegador trata a PDF de forma diferente, al aprovechar la API Adobe PDF Embed junto con la API de servicios de PDF, puede crear procesos optimizados, fiables y predecibles que se ejecuten y se muestren correctamente **siempre** independientemente de la plataforma o dispositivo.
+La API de servicios de PDF puede ayudarte a eliminar procesos manuales automatizando flujos de trabajo comunes y desplazando la carga de procesamiento a la nube. En un mundo en el que cada navegador trata a PDF de forma diferente, al aprovechar la API Adobe PDF Embed junto con la API de servicios de PDF, puede crear procesos optimizados, fiables y predecibles que se ejecuten y se muestren correctamente **siempre** independientemente de la plataforma o el dispositivo.
 
 ## Recursos y pasos siguientes
 
@@ -69,6 +70,6 @@ La API de servicios de PDF puede ayudarte a eliminar procesos manuales automatiz
 
 * Artículos relacionados
 
-   [La nueva API de servicios de PDF ofrece aún más funciones para los flujos de trabajo de documentos](https://community.adobe.com/t5/document-services-apis/new-pdf-tools-api-brings-more-capabilities-for-document-services/m-p/11294170)
+  [La nueva API de servicios de PDF ofrece aún más funciones para los flujos de trabajo de documentos](https://community.adobe.com/t5/document-services-apis/new-pdf-tools-api-brings-more-capabilities-for-document-services/m-p/11294170)
 
-   [Versión de julio de [!DNL Adobe Acrobat Services]: Servicios de incrustación y PDF para PDF](https://medium.com/adobetech/july-release-of-adobe-document-services-pdf-embed-and-pdf-tools-17211bf7776d)
+  [Versión de julio de [!DNL Adobe Acrobat Services]: Servicios de incrustación y PDF para PDF](https://medium.com/adobetech/july-release-of-adobe-document-services-pdf-embed-and-pdf-tools-17211bf7776d)

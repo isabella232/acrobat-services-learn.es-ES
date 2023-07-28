@@ -4,10 +4,11 @@ description: Aprende a crear un flujo de trabajo eficiente para automatizar y si
 role: Developer
 level: Intermediate
 type: Tutorial
+feature: Use Cases
 thumbnail: KT-8099.jpg
 jira: KT-8099
 exl-id: 219c70de-fec1-4946-b10e-8ab5812562ef
-source-git-commit: 2d1151c17dfcfa67aca05411976f4ef17adf421b
+source-git-commit: b65ffa3efa3978587564eb0be0c0e7381c8c83ab
 workflow-type: tm+mt
 source-wordcount: '1395'
 ht-degree: 2%
@@ -44,15 +45,15 @@ En este tutorial práctico, aprenderá a implementar datos y flujos de trabajo d
 
 ## Resolver el problema
 
-Ahora que tiene las herramientas instaladas, puede empezar a resolver el problema. Las propuestas tienen tanto contenido estático como contenido dinámico exclusivo para cada cliente. Los cuellos de botella se producen porque ambos tipos de datos son necesarios cada vez que se hace una propuesta. Introducir el texto estático lleva mucho tiempo, por lo que lo automatizarás y solo tratarás manualmente los datos dinámicos de cada cliente.
+Ahora que ya tiene las herramientas instaladas, puede empezar a resolver el problema. Las propuestas tienen tanto contenido estático como contenido dinámico exclusivo para cada cliente. Los cuellos de botella se producen porque ambos tipos de datos son necesarios cada vez que se hace una propuesta. Introducir el texto estático lleva mucho tiempo, por lo que lo automatizarás y solo tratarás manualmente los datos dinámicos de cada cliente.
 
-En primer lugar, cree un formulario de captura de datos en [Microsoft Forms](https://www.office.com/launch/forms?auth=1) (o el creador de formularios que prefiera). Este formulario es para los datos dinámicos de los clientes que se agregan a una propuesta de ventas. Rellene este formulario con preguntas para obtener los detalles que necesita de los clientes; por ejemplo, nombre de la empresa, fecha, dirección, ámbito del proyecto, precios y comentarios adicionales. Para crear el tuyo propio, usa esto [forma](https://forms.office.com/Pages/ShareFormPage.aspx). El objetivo es que los clientes potenciales rellenen el formulario y, a continuación, exporten sus respuestas como archivos JSON, que pasan a la siguiente parte del flujo de trabajo.
+Primero, cree un formulario de captura de datos en [Microsoft Forms](https://www.office.com/launch/forms?auth=1) (o su creador de formularios preferido). Este formulario es para los datos dinámicos de los clientes que se agregan a una propuesta de ventas. Rellene este formulario con preguntas para obtener los detalles que necesita de los clientes; por ejemplo, nombre de la empresa, fecha, dirección, ámbito del proyecto, precios y comentarios adicionales. Para crear el tuyo propio, usa esto [forma](https://forms.office.com/Pages/ShareFormPage.aspx id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAN__rtiGj5UNElTR0pCQ09ZNkJRUlowSjVQWDNYUEg2RC4u&amp;sharetoken=1AJeMavBAzzxuISRKmUy). El objetivo es que los clientes potenciales rellenen el formulario y, a continuación, exporten sus respuestas como archivos JSON, que pasan a la siguiente parte del flujo de trabajo.
 
-Algunos creadores de formularios solo permiten exportar datos como archivos CSV. Por lo tanto, puede resultar útil [convertir](http://csvjson.com/csv2json) el archivo CSV generado en un archivo JSON.
+Algunos creadores de formularios solo permiten exportar datos como archivos CSV. Por lo tanto, puede resultarle útil [convertir](http://csvjson.com/csv2json) el archivo CSV generado en un archivo JSON.
 
 Los datos estáticos se reutilizan en todas las propuestas de ventas. Por lo tanto, puede utilizar una plantilla de propuesta de ventas en Microsoft Word para proporcionar el texto estático. Puedes usar esto [plantilla](https://1drv.ms/w/s!AiqaN2pp7giKkmhVu2_2pId9MiPa?e=oeqoQ2), pero puede crear los suyos propios o utilizar un [plantilla de Adobe](https://www.adobe.io/apis/documentcloud/dcsdk/doc-generation.html).
 
-Ahora, necesita algo que tome los datos dinámicos de los clientes en formato JSON y el texto estático en la plantilla de Microsoft Word para hacer una propuesta de ventas única para un cliente. La [!DNL Acrobat Services] Las API se utilizan para combinar las dos y generar un PDF que se pueda firmar.
+Ahora, necesita algo que tome tanto los datos dinámicos de los clientes en formato JSON como el texto estático en la plantilla de Microsoft Word para hacer una propuesta de ventas única para un cliente. La [!DNL Acrobat Services] Las API se utilizan para combinar las dos y generar un PDF que se pueda firmar.
 
 Para que esto funcione, se utilizan etiquetas. Las etiquetas son cadenas fáciles de usar que pueden representar números, palabras, matrices o incluso objetos complejos. Las etiquetas actúan como un marcador de posición para los datos dinámicos, que en este caso son datos de cliente introducidos en el formulario. Una vez que inserte etiquetas en la plantilla, puede asignar campos de formulario del archivo JSON a la plantilla de Word.
 
@@ -72,25 +73,25 @@ Seleccionar **Generar etiquetas** para obtener una lista de campos del archivo J
 
 ![Captura de pantalla de etiquetas disponibles](assets/sales_3.png)
 
-Después de generar las etiquetas, puede insertarlas en el documento. Las etiquetas se agregan al documento en la ubicación del cursor. Como se muestra anteriormente, debe agregar el **Ámbito del proyecto** situado justo debajo del **Ámbito del proyecto** subtítulo. De esta manera, cuando un cliente entra en el ámbito del proyecto en el formulario, su respuesta va por debajo del **Ámbito del proyecto** , reemplazando la etiqueta que acaba de añadir. Cuando haya terminado de añadir etiquetas, parte del documento debería parecerse a la captura de pantalla que se muestra a continuación.
+Después de generar las etiquetas, puede insertarlas en el documento. Las etiquetas se agregan al documento en la ubicación del cursor. Como se muestra anteriormente, debe agregar el **Ámbito del proyecto** situado justo debajo de la **Ámbito del proyecto** subtítulo. De esta manera, cuando un cliente entra en el ámbito del proyecto en el formulario, su respuesta va por debajo del **Ámbito del proyecto** , reemplazando la etiqueta que acaba de añadir. Cuando haya terminado de añadir etiquetas, parte del documento debería parecerse a la captura de pantalla que se muestra a continuación.
 
 ![Captura de pantalla de adición de etiquetas a un documento de Word](assets/sales_4.png)
 
 ## Uso de las API
 
-Vaya a la [!DNL Acrobat Services] API [página principal](https://www.adobe.io/apis/documentcloud/dcsdk/doc-generation.html). Para empezar a utilizar [!DNL Acrobat Services] API, necesita credenciales para su aplicación. Desplácese hacia abajo todo el recorrido y seleccione **Iniciar prueba gratis** para crear credenciales. Puede utilizar estos servicios [gratis durante seis meses y, a continuación, con pago por uso](https://www.adobe.io/apis/documentcloud/dcsdk/pdf-pricing.html) por solo $0.05 por transacción de documento, para que solo pagues por lo que necesitas.
+Vaya a la [!DNL Acrobat Services] API [homepage](https://www.adobe.io/apis/documentcloud/dcsdk/doc-generation.html). Para empezar a utilizar [!DNL Acrobat Services] API, necesita credenciales para su aplicación. Desplácese hacia abajo todo el recorrido y seleccione **Iniciar prueba gratis** para crear credenciales. Puede utilizar estos servicios [gratis durante seis meses y, a continuación, con pago por uso](https://www.adobe.io/apis/documentcloud/dcsdk/pdf-pricing.html) por solo $0.05 por transacción de documento, para que solo pagues por lo que necesitas.
 
 Seleccionar **API de servicios de PDF** como su servicio de elección y rellene los otros detalles como se muestra a continuación.
 
 ![Captura de pantalla de obtención de credenciales](assets/sales_5.png)
 
-Una vez creadas las credenciales, se obtienen algunos ejemplos de código. Seleccione su idioma preferido (este tutorial utiliza Node.js). Sus credenciales de API están en un archivo zip. Extraiga los archivos en PDFToolsSDK-Node.jsSamples.
+Una vez creadas las credenciales, se obtienen algunos ejemplos de código. Seleccione su idioma preferido (este tutorial utiliza Node.js). Sus credenciales de API se encuentran en un archivo zip. Extraiga los archivos en PDFToolsSDK-Node.jsSamples.
 
 Para empezar, cree una carpeta vacía llamada auto-doc\*\*.\*\* En la carpeta, ejecute el siguiente comando para inicializar un proyecto Node.js: `npm init`. Asigne al proyecto el nombre &quot;auto-doc&quot;*.*
 
 En la carpeta ./PDFToolsSDK-Node.jsSamples/adobe-dc-pdf-tools-sdk-node-samples, hay un archivo llamado pdftools-api-credentials.json. Mueva y private.key a la carpeta auto-doc. Contiene sus credenciales de API. Además, en la carpeta de documentos automáticos, cree una subcarpeta llamada &quot;resources&quot;. Contiene los datos con formato JSON recibidos de los clientes cada vez que se genera una propuesta de ventas. En la misma carpeta, guarde la plantilla de propuesta de ventas de Microsoft Word.
 
-¡Ahora estás listo para hacer magia! Como está utilizando Node.js en este tutorial, debe instalar Node.js [!DNL Acrobat Services] SDK. Para ello, en la carpeta auto-doc, ejecute yarn add @adobe/documentservices-pdftools-node-sdk.
+¡Ahora estás listo para hacer un poco de magia! Dado que está utilizando Node.js en este tutorial, debe instalar Node.js [!DNL Acrobat Services] SDK. Para ello, en la carpeta auto-doc, ejecute yarn add @adobe/documentservices-pdftools-node-sdk.
 
 Ahora cree un archivo llamado merge.js y pegue el siguiente código en él.
 
@@ -144,4 +145,4 @@ Empezaste con un proceso ineficiente y tedioso que necesitaba automatización. P
 
 Con Microsoft Forms, obtienes datos importantes de tus clientes que encajarían en sus propuestas únicas. Ha creado una plantilla de propuesta de ventas en Microsoft Word para proporcionar el texto estático que no desea volver a crear cada vez. Después utilizó [!DNL Acrobat Services] API para combinar los datos del formulario y la plantilla para crear un PDF de propuestas de ventas para sus clientes de una manera más eficaz.
 
-Este tutorial práctico es solo un vistazo de las posibilidades con estas API. Para descubrir más soluciones, visite la [[!DNL Adobe Acrobat Services]](https://www.adobe.io/apis/documentcloud/dcsdk/gettingstarted.html) página de API. Utilice todas estas herramientas de forma gratuita durante seis meses. Después, paga solo 0,05 USD por transacción de documento en el [pago por uso](https://www.adobe.io/apis/documentcloud/dcsdk/pdf-pricing.html) de forma que solo pagues a medida que tu equipo añada más clientes potenciales a tu canal de ventas.
+Este tutorial práctico es solo un vistazo de las posibilidades con estas API. Para descubrir más soluciones, visite la [[!DNL Adobe Acrobat Services]](https://www.adobe.io/apis/documentcloud/dcsdk/gettingstarted.html) página de API. El uso de todas estas herramientas es gratis durante seis meses. A continuación, paga solo 0,05 USD por transacción de documento en el [de pago por uso](https://www.adobe.io/apis/documentcloud/dcsdk/pdf-pricing.html) de forma que solo pagues a medida que tu equipo añada más clientes potenciales a tu canal de ventas.

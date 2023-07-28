@@ -3,7 +3,8 @@ user-guide-title: "[!DNL Adobe Acrobat Services]"
 breadcrumb-title: "[!DNL Acrobat Services]"
 user-guide-description: Más información sobre [!DNL Adobe Acrobat Services]
 solution: Acrobat Services
-source-git-commit: 264941900ac1e4778923645cef97a796b0213030
+feature-set: Acrobat Services
+source-git-commit: a43d53151702b9f689815d03226470ab9c44eb77
 workflow-type: tm+mt
 source-wordcount: '209'
 ht-degree: 7%
@@ -16,11 +17,11 @@ ht-degree: 7%
 + [Información general](overview.md)
 + API de servicios de PDF {#pdfservices}
    + [Información general](pdfservices/overview-pdfservices.md)
-   + [Obtención de credenciales para Microsoft Power Automate](pdfservices/getting-credentials-power-automate.md)
+   + [Obtener credenciales para Microsoft Power Automate](pdfservices/getting-credentials-power-automate.md)
    + [Crea tu primer flujo en Microsoft Power Automate](pdfservices/create-workflow-power-automate.md)
    + [Crear PDF desde HTML](pdfservices/createpdffromhtml.md)
-   + [Uso de la API de servicios de PDF para exportar PDF a Word, PowerPoint y mucho más](pdfservices/exportpdf.md)
-   + [Introducción a la API de Adobe PDF Services y Java](pdfservices/gettingstartedjava.md)
+   + [Uso de la API de servicios de PDF para exportar un PDF a Word, PowerPoint y mucho más](pdfservices/exportpdf.md)
+   + [Introducción a la API de servicios de Adobe PDF y Java](pdfservices/gettingstartedjava.md)
    + [Introducción a la API de servicios de Adobe PDF y .Net](pdfservices/gettingstartednet.md)
    + [Uso de la API de servicios de Adobe PDF para archivos del PDF de OCR](pdfservices/ocr.md)
 + API de generación de documentos {#docgen}
@@ -31,7 +32,7 @@ ht-degree: 7%
       + [Adición de etiquetas de imagen](docgen/taggeraddimagetags.md)
       + [Adición de tablas y etiquetas de lista](docgen/taggertables.md)
       + [Definición de etiquetas de cálculo numérico](docgen/taggercalculations.md)
-      + [Establecer contenido condicional](docgen/taggerconditional.md)
+      + [Configuración del contenido condicional](docgen/taggerconditional.md)
 + API de PDF Extract {#pdfextract}
    + [Información general](pdfextract/overview-extract.md)
 + API de incrustación de PDF {#pdfembed}
@@ -48,8 +49,8 @@ ht-degree: 7%
       + [Creación de un documento transitorio](acrobatsign/creating-a-transient-document.md)
 + Casos prácticos {#usecases}
    + [Información general](usecases/overview-usecases.md)
-   + [Automatizar flujos de trabajo legales](usecases/automatelegalworkflows.md)
-   + [Modernizar la incorporación de empleados](usecases/employeeonboarding.md)
+   + [Automatiza los flujos de trabajo legales](usecases/automatelegalworkflows.md)
+   + [Modernización de la incorporación de empleados](usecases/employeeonboarding.md)
    + [Agiliza tu proceso de ventas](usecases/acceleratesales.md)
    + [Gestión de propuestas de ventas y contratos](usecases/sales.md)
    + [Creación de un acuerdo de confidencialidad](usecases/nda.md)

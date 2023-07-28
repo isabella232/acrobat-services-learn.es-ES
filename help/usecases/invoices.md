@@ -4,10 +4,11 @@ description: Aprende a generar, proteger con contraseña y entregar facturas de 
 role: Developer
 level: Intermediate
 type: Tutorial
+feature: Use Cases
 thumbnail: KT-8145.jpg
 jira: KT-8145
 exl-id: 5871ef8d-be9c-459f-9660-e2c9230a6ceb
-source-git-commit: 2d1151c17dfcfa67aca05411976f4ef17adf421b
+source-git-commit: b65ffa3efa3978587564eb0be0c0e7381c8c83ab
 workflow-type: tm+mt
 source-wordcount: '1427'
 ht-degree: 1%
@@ -22,7 +23,7 @@ Es genial cuando el negocio está en auge, pero la productividad se resiente cua
 
 Piensa en Danielle, por ejemplo, trabajando en el [departamento contabilidad](https://www.adobe.io/apis/documentcloud/dcsdk/invoices.html) [de una empresa de suministros médicos](https://www.adobe.io/apis/documentcloud/dcsdk/invoices.html). Es fin de mes, así que está extrayendo información de varios sistemas diferentes, comprobando su precisión y formateando las facturas. Después de todo ese trabajo, por fin está lista para convertir los documentos a PDF (para que cualquiera pueda verlos sin comprar un software específico) y enviar a cada cliente su factura personalizada.
 
-Incluso cuando la facturación mensual está completa, Danielle no puede escapar de esas facturas. Algunos clientes tienen ciclos de facturación no mensuales, por lo que siempre está creando una factura para alguien. A veces, un cliente edita su factura y paga menos. Danielle pasa tiempo solucionando este desajuste de factura. A este ritmo, ella necesita contratar a un asistente para mantenerse al día con todo el trabajo!
+Incluso cuando la facturación mensual está completa, Danielle no puede escapar de esas facturas. Algunos clientes tienen ciclos de facturación no mensuales, por lo que siempre está creando una factura para alguien. A veces, un cliente edita su factura y paga menos. Danielle entonces pasa tiempo solucionando este desajuste de factura. A este ritmo, ella necesita contratar a un asistente para mantenerse al día con todo el trabajo!
 
 Lo que Danielle necesita es una forma de generar facturas de forma rápida y precisa, tanto por lotes a final de mes como ad hoc en otros momentos. Lo ideal sería que, si pudiera proteger estas facturas de las ediciones, no tuviera que preocuparse por la solución de problemas de importes no coincidentes.
 
@@ -44,7 +45,7 @@ El código completo de este proyecto es [disponible en GitHub](https://github.co
 
 ## Preparación de los datos
 
-Este tutorial no examina cómo se importan los datos de los almacenes de datos. Los pedidos de los clientes pueden estar en una base de datos, API externa o software personalizado. La API de generación de documentos de Adobe espera un documento JSON que contenga los datos de facturación, como la información de su plataforma de gestión de relaciones con el cliente (CRM) o de comercio electrónico. En este tutorial se supone que los datos ya están en formato JSON.
+Este tutorial no examina cómo se importan los datos de los almacenes de datos. Los pedidos de los clientes pueden estar en una base de datos, una API externa o un software personalizado. La API de generación de documentos de Adobe espera un documento JSON que contenga los datos de facturación, como la información de su plataforma de gestión de relaciones con el cliente (CRM) o de comercio electrónico. En este tutorial se supone que los datos ya están en formato JSON.
 
 Para simplificar, utilice la siguiente estructura JSON para la facturación:
 
@@ -86,19 +87,19 @@ Una vez que haya pegado el contenido JSON en el complemento, como se muestra ant
 
 En el documento de Microsoft Word, empiece a escribir la plantilla de factura. Deje el cursor donde debe insertar datos dinámicos y, a continuación, seleccione la etiqueta en la ventana del complemento de Adobe. Haga clic en **Insertar texto** para que el complemento etiquetador de generación de documentos de Adobe pueda generar e insertar las etiquetas. Para la personalización, vamos a insertar el nombre y el correo electrónico del cliente.
 
-Ahora, pase a los datos que cambian con cada nueva factura. Seleccione la **Avanzado** del complemento. Para ver las opciones disponibles para generar una tabla dinámica basada en los productos solicitados por un cliente, haga clic en **Tablas y listas** .
+Ahora, pase a los datos que cambian con cada nueva factura. Seleccione la **Avanzado** del complemento. Para ver las opciones disponibles para generar una tabla dinámica basada en los productos que ha pedido un cliente, haga clic en **Tablas y listas** .
 
 Seleccionar **Orden** desde el primer menú desplegable. En el segundo menú desplegable, seleccione las columnas de esta tabla. En este tutorial, seleccione las tres columnas del objeto para procesar la tabla.
 
 ![Captura de pantalla de la pestaña Avanzado del etiquetador de generación de documentos](assets/invoices_3.png)
 
-La API de generación de documentos también puede realizar operaciones complejas como agregar elementos dentro de una matriz. En la **Avanzado** , seleccione **Cálculos numéricos** y en el **Agregación** , seleccione el campo en el que desea aplicar el cálculo.
+La API de generación de documentos también puede realizar operaciones complejas como agregar elementos dentro de una matriz. En la **Avanzado** , seleccione **Cálculos numéricos**, y en el **Agregación** , seleccione el campo donde desea aplicar el cálculo.
 
 ![Captura de pantalla del etiquetador de generación de documentos Cálculos numéricos](assets/invoices_4.png)
 
 Haga clic en **Insertar cálculo** para insertar esta etiqueta donde sea necesario dentro del documento. El siguiente texto aparece ahora en su archivo de Microsoft Word:
 
-![Captura de pantalla de etiquetas en un documento de Microsoft Word](assets/invoices_5.png)
+![Captura de pantalla de las etiquetas en el documento de Microsoft Word](assets/invoices_5.png)
 
 Este ejemplo de factura contiene información del cliente, los productos pedidos y el importe total adeudado.
 
@@ -219,7 +220,7 @@ async function applyPassword(password, inputFile, outputFile) {
 
 Cuando utiliza este código, protege su documento con una contraseña y carga una nueva factura al sistema. Para obtener más información sobre cómo se utiliza este código o probarlo, consulte la [ejemplo de código](https://github.com/afzaal-ahmad-zeeshan/adobe-pdf-invoice-generation).
 
-Una vez que haya terminado con la factura, es posible que desee enviarla automáticamente por correo electrónico al cliente. Hay varias formas de conseguir enviar correos electrónicos a los clientes automáticamente. La forma más rápida es utilizar una API de correo electrónico de terceros junto con una biblioteca auxiliar como [sendgrid-nodejs](https://github.com/sendgrid/sendgrid-nodejs). Como alternativa, si ya tiene acceso a un servidor SMTP, puede utilizar [nodemailer](https://www.npmjs.com/package/nodemailer) para enviar correos electrónicos a través de SMTP.
+Una vez que haya terminado con la factura, es posible que desee enviarla automáticamente por correo electrónico al cliente. Hay varias formas de conseguir que los clientes envíen correos electrónicos de forma automática. La forma más rápida es utilizar una API de correo electrónico de terceros junto con una biblioteca auxiliar como [sendgrid-nodejs](https://github.com/sendgrid/sendgrid-nodejs). Como alternativa, si ya tiene acceso a un servidor SMTP, puede utilizar [correo electrónico](https://www.npmjs.com/package/nodemailer) para enviar correos electrónicos mediante SMTP.
 
 ## Pasos siguientes
 
@@ -229,5 +230,5 @@ Como Danielle puede generar facturas automáticamente y no tiene que preocuparse
 
 Ahora que ya ves lo fácil que es, puedes expandir esta sencilla aplicación usando otras herramientas de Adobe para insertar facturas en tu sitio web. Por ejemplo, para que los clientes puedan ver sus facturas o saldo en cualquier momento. [API Adobe PDF Embed](https://www.adobe.io/apis/documentcloud/dcsdk/pdf-embed.html) es de uso gratuito. Incluso puedes pasar al departamento de recursos humanos o ventas, lo que te ayuda a automatizar sus acuerdos y recopilar firmas electrónicas.
 
-Para explorar todas las posibilidades y empezar a crear su propia aplicación práctica, cree una [[!DNL Adobe Acrobat Services]](https://www.adobe.io/apis/documentcloud/dcsdk/gettingstarted.html) para empezar hoy mismo. Disfruta de una prueba gratis de seis meses [pago por uso](https://www.adobe.io/apis/documentcloud/dcsdk/pdf-pricing.html)
+Para explorar todas las posibilidades y empezar a crear su propia aplicación práctica, cree una [[!DNL Adobe Acrobat Services]](https://www.adobe.io/apis/documentcloud/dcsdk/gettingstarted.html) para empezar hoy mismo. Disfruta de una prueba gratis de seis meses entonces [de pago por uso](https://www.adobe.io/apis/documentcloud/dcsdk/pdf-pricing.html)
 a solo $0.05 por transacción de documento a medida que se amplía tu negocio.

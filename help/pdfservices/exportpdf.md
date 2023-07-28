@@ -1,24 +1,25 @@
 ---
-title: Uso de la API de servicios de PDF para exportar PDF a Word, PowerPoint y mucho más
-description: Aprenda a ejecutar la operación de exportación de la API de servicios de PDF mediante archivos de ejemplo para los lenguajes Node.js, Java y .Net
+title: Uso de la API de servicios de PDF para exportar un PDF a Word, PowerPoint y mucho más
+description: Aprenda a ejecutar la operación de exportación de la API de Servicios de PDF mediante archivos de ejemplo para los lenguajes Node.js, Java y .Net
 type: Tutorial
 role: Developer
 level: Intermediate
+feature: PDF Services API
 thumbnail: KT-6674.jpg
 kt: 6674
 exl-id: 55f5b04e-0249-47d9-9131-2f9ec01db7e8
-source-git-commit: 2d1151c17dfcfa67aca05411976f4ef17adf421b
+source-git-commit: b65ffa3efa3978587564eb0be0c0e7381c8c83ab
 workflow-type: tm+mt
 source-wordcount: '500'
 ht-degree: 5%
 
 ---
 
-# Uso de la API de servicios de PDF para exportar PDF a Word, PowerPoint y mucho más
+# Uso de la API de servicios de PDF para exportar un PDF a Word, PowerPoint y mucho más
 
 ![Crear imagen de héroe de PDF](assets/ExportPDF_hero.jpg)
 
-La API de servicios de Adobe PDF convierte archivos de PDF en MS Office, texto e imágenes mediante API. Hay muchos casos prácticos habituales para desbloquear PDF existentes para la edición y el análisis de contenido, y con PDF Services los desarrolladores de API pueden integrar fácilmente esta capacidad en los sistemas y aplicaciones existentes. Convierte archivos de PDF a MS Word para editar contenido, aprobaciones y enviarlos posteriormente para su firma con el fin de crear flujos de trabajo de contratos personalizados. O bien, exporta el contenido del PDF al formato de MS Excel para cálculos de facturas y financieros o análisis de datos.
+La API de servicios de Adobe PDF convierte archivos de PDF en MS Office, texto e imágenes mediante API. Hay muchos casos prácticos habituales para desbloquear PDF existentes para la edición y el análisis de contenido y, con PDF Services, los desarrolladores de API pueden integrar fácilmente esta función en los sistemas y aplicaciones existentes. Convierte archivos de PDF a MS Word para editar contenido, aprobaciones y enviarlos posteriormente para su firma con el fin de crear flujos de trabajo de contratos personalizados. O bien, exporta el contenido del PDF al formato de MS Excel para cálculos de facturas y financieros o análisis de datos.
 
 La operación de exportación admite las siguientes conversiones de archivos de PDF:
 
@@ -32,7 +33,7 @@ En este tutorial, aprenderá los conceptos básicos sobre cómo ejecutar la prim
 
 ## Paso 1: Cree sus credenciales y configure su entorno:
 
-Utilice los siguientes tutoriales de introducción para crear credenciales de API, descargar archivos de muestra y configurar su entorno.
+Utilice los tutoriales de introducción que se indican a continuación para crear credenciales de API, descargar archivos de muestra y configurar el entorno.
 
 [Introducción a la API de servicios de PDF y Java](gettingstartedjava.md)
 
@@ -40,7 +41,7 @@ Utilice los siguientes tutoriales de introducción para crear credenciales de AP
 
 [Introducción a la API de servicios de PDF y Node.js](createpdffromhtml.md)
 
-## Paso 2: Ejecute la operación de exportación a PDF con los archivos de muestra
+## Paso 2: Ejecute la operación de exportación de PDF utilizando los archivos de muestra
 
 **Java**
 

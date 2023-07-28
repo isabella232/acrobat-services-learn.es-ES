@@ -4,10 +4,11 @@ description: Aprenda a mostrar documentos de PDF incrustados en páginas web med
 role: Developer
 level: Intermediate
 type: Tutorial
+feature: Use Cases
 thumbnail: KT-8090.jpg
 jira: KT-8090
 exl-id: 3aa9aa40-a23c-409c-bc0b-31645fa01b40
-source-git-commit: 2d1151c17dfcfa67aca05411976f4ef17adf421b
+source-git-commit: b65ffa3efa3978587564eb0be0c0e7381c8c83ab
 workflow-type: tm+mt
 source-wordcount: '1903'
 ht-degree: 0%
@@ -70,7 +71,7 @@ Por último, abra el sitio web en <http://localhost:3000>.
 
 ![Captura de pantalla del sitio web básico](assets/ddp_1.png)
 
-Ahora tiene un sitio web básico.
+Ahora dispone de un sitio web básico.
 
 ## Representación de datos del informe técnico
 
@@ -90,7 +91,7 @@ app.use(express.static(path.join(__dirname, '/node_modules/bootstrap/dist')));
 app.use(express.static(path.join(__dirname, '/node_modules/font-awesome')));
 ```
 
-Para incluir los documentos de PDF, cree una carpeta denominada \\pdfs en la carpeta \\public del proyecto. En lugar de crear los PDF y las miniaturas por sí mismo, puede copiarlos de este [Carpeta del repositorio de GitHub](https://github.com/marcelooliveira/EmbedPDF/tree/main/pdf-app/public) a las carpetas \\pdfs y \\image.
+Para incluir los documentos de PDF, cree una carpeta denominada \\pdf bajo la carpeta \\public del proyecto. En lugar de crear los PDF y las miniaturas por sí mismo, puede copiarlos de este [Carpeta del repositorio de GitHub](https://github.com/marcelooliveira/EmbedPDF/tree/main/pdf-app/public) a las carpetas \\pdfs y \\image.
 
 La carpeta \\public\\pdfs contiene ahora los documentos del PDF:
 
@@ -119,7 +120,7 @@ Ahora modifique la línea para invocar el método render de la vista de índice,
 res.render('index', { title: 'Embedding PDF', papers: papers });
 ```
 
-Para representar la colección de documentos técnicos en la página principal, abra el archivo \\views\\index.ejs y sustituya el código existente por el código del proyecto [fichero índice](https://github.com/marcelooliveira/EmbedPDF/blob/main/pdf-app/views/index.ejs).
+Para representar la colección de documentos técnicos en la página principal, abra el archivo \\views\\index.ejs y sustituya el código existente por el código del proyecto [archivo de índice](https://github.com/marcelooliveira/EmbedPDF/blob/main/pdf-app/views/index.ejs).
 
 Ahora, vuelva a ejecutar npm start y open <http://localhost:3000> para ver la colección de documentos técnicos disponibles.
 
@@ -131,13 +132,13 @@ En las siguientes secciones se incluye la mejora del sitio web y el uso de [API 
 
 Para obtener una credencial de API incrustada de PDF gratuita, visite la [Introducción](https://www.adobe.io/apis/documentcloud/dcsdk/gettingstarted.html) después de registrarse para una nueva cuenta o iniciar sesión en su cuenta existente.
 
-Haga clic en **Crear nuevas credenciales** y luego **Introducción:**
+Haga clic en **Crear nuevas credenciales** y, a continuación **Introducción:**
 
 ![Captura de pantalla de cómo crear nuevas credenciales](assets/ddp_5.png)
 
 En este punto, se le pedirá que se registre para obtener una cuenta gratuita si no tiene una.
 
-Seleccionar **API de incrustación de PDF**, escriba el nombre de las credenciales y el dominio de aplicación. Utilice la **localhost** debido a la prueba local de la aplicación web.
+Seleccionar **API de incrustación de PDF** y, a continuación, escriba el nombre de las credenciales y el dominio de aplicación. Utilice la **localhost** debido a la prueba local de la aplicación web.
 
 ![Captura de pantalla de creación de nuevas credenciales para la API de incrustación de PDF](assets/ddp_6.png)
 
@@ -173,11 +174,11 @@ En el panel izquierdo, puede elegir el modo de incrustación que mejor se adapte
 
 * **Ventana completa**: el PDF cubre todo el espacio de la página web
 
-* **Contenedor de tamaño**: el PDF muestra dentro de la página web, una página cada vez, en una div de tamaño limitado
+* **Contenedor de tamaño**: el PDF se muestra dentro de la página web, una página cada vez, en una div de tamaño limitado
 
 * **En Línea**: todo el PDF se muestra en una div dentro de la página web
 
-* **Lightbox**: el PDF se muestra como una capa en la parte superior de la página web
+* **Lightbox**: el PDF se muestra como una capa en la parte superior de la página web.
 
 Se recomienda utilizar el modo de incrustación en línea para documentos técnicos y el generador de código más adelante para incrustar un PDF en la aplicación.
 
@@ -265,7 +266,7 @@ var indexRouter = require('./routes/index');
 var inLineRouter = require('./routes/in-line');
 ```
 
-Luego agregue este código después de app.use(&#39;/&#39;, indexRouter); para asociar la vista del modo de incrustación en línea a su enrutador:
+A continuación, agregue este código después de app.use(&#39;/&#39;, indexRouter); para asociar la vista del modo de incrustación en línea con su enrutador:
 
 ```
 app.use('/', indexRouter);
@@ -292,7 +293,7 @@ res.render('in-line', { title: paper.title, paper: paper });
 module.exports = router;
 ```
 
-Mira de nuevo el [demostración en directo](https://documentcloud.adobe.com/view-sdk-demo/index.html#/view/FULL_WINDOW/Bodea%20Brochure.pdf) para generar automáticamente el código de API de incrustación del PDF. Haga clic en **En Línea** en el panel izquierdo:
+Mira de nuevo el [demostración en directo](https://documentcloud.adobe.com/view-sdk-demo/index.html#/view/FULL_WINDOW/Bodea%20Brochure.pdf) para generar automáticamente el código de la API de incrustación del PDF. Haga clic en **En Línea** en el panel izquierdo:
 
 ![Captura de pantalla de la demostración de API de incrustación de PDF en vivo](assets/ddp_8.png)
 
@@ -348,7 +349,7 @@ Por último, elige un artículo técnico y haz clic **Ver documento** para abrir
 
 ![Captura de pantalla del informe técnico de PDF ](assets/ddp_11.png)
 
-Observe cómo están presentes las opciones Descargar PDF y Imprimir PDF.
+Observe cómo están presentes las opciones Descargar PDF y PDF de impresión.
 
 ![Captura de pantalla de las opciones de descarga e impresión](assets/ddp_12.png)
 
@@ -558,4 +559,4 @@ Si eres desarrollador de Angular o React, puede que te guste probar [muestras ad
 
 Adobe te permite crear tu experiencia de cliente integral con soluciones innovadoras. Retirar [API Adobe PDF Embed](https://www.adobe.io/apis/documentcloud/viesdk) gratis. Para descubrir qué más puede hacer, pruebe la API de servicios de Adobe PDF con [pay-as-you-gopr](https://www.adobe.io/apis/documentcloud/dcsdk/pdf-pricing.html)[glaseado](https://www.adobe.io/apis/documentcloud/dcsdk/pdf-pricing.html).
 
-[Primeros pasos](https://www.adobe.io/apis/documentcloud/dcsdk/gettingstarted.html) con [!DNL Adobe Acrobat Services] API actuales.
+[Introducción](https://www.adobe.io/apis/documentcloud/dcsdk/gettingstarted.html) con [!DNL Adobe Acrobat Services] API actuales.

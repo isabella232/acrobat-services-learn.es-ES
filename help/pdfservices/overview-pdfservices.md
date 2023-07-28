@@ -4,10 +4,11 @@ description: Página Resumen de los tutoriales de la API de Adobe PDF Services
 type: Tutorial
 role: Developer
 level: Beginner, Intermediate, Experienced
+feature: PDF Services API
 thumbnail: KT-8116.jpg
 jira: KT-8116
 exl-id: 81410fe4-7a2c-43a9-b497-b7423f9821ec
-source-git-commit: 2d1151c17dfcfa67aca05411976f4ef17adf421b
+source-git-commit: b65ffa3efa3978587564eb0be0c0e7381c8c83ab
 workflow-type: tm+mt
 source-wordcount: '306'
 ht-degree: 0%
@@ -32,7 +33,7 @@ ht-degree: 0%
   </td>
   <td>
    <a href="getting-credentials-power-automate.md">
-      <img alt="Obtención de credenciales para Microsoft Power Automate" src="assets/createcredentials_1280.png" />
+      <img alt="Obtener credenciales para Microsoft Power Automate" src="assets/createcredentials_1280.png" />
    </a>
     <div>
    <a href="getting-credentials-power-automate.md"><strong>Obtención de credenciales para [!DNL Microsoft Power Automate]</strong></a>
@@ -64,7 +65,7 @@ ht-degree: 0%
 <tr>
   <td>
    <a href="exportpdf.md">
-      <img alt="Uso de la API de servicios de PDF para exportar PDF a Word, PowerPoint y mucho más" src="assets/PDFServices_ExportPDF_thumb.jpg" />
+      <img alt="Uso de la API de servicios de PDF para exportar un PDF a Word, PowerPoint y mucho más" src="assets/PDFServices_ExportPDF_thumb.jpg" />
    </a>
     <div>
    <a href="exportpdf.md"><strong>Apalancamiento [!DNL PDF Services API] para exportar el PDF a [!DNL Word], [!DNL PowerPoint]y mucho más</strong></a>
@@ -74,10 +75,10 @@ ht-degree: 0%
   </td>
    <td>
    <a href="gettingstartedjava.md">
-      <img alt="Introducción a la API de Adobe PDF Services y Java" src="assets/PDFServices_GettingStartedJAVA_thumb.jpg" />
+      <img alt="Introducción a la API de servicios de Adobe PDF y Java" src="assets/PDFServices_GettingStartedJAVA_thumb.jpg" />
    </a>
     <div>
-   <a href="gettingstartedjava.md"><strong>Introducción a la API de Adobe PDF Services y Java</strong></a>
+   <a href="gettingstartedjava.md"><strong>Introducción a la API de servicios de Adobe PDF y Java</strong></a>
     </div>
     <em>Los desarrolladores pueden empezar en solo unos minutos con los archivos de muestra listos para ejecutar que se proporcionan para acceder a todos los servicios web disponibles</em>
     <br>
@@ -97,7 +98,7 @@ ht-degree: 0%
       <img alt="Introducción a la API de servicios de Adobe PDF y .Net" src="assets/PDFServices_GettingStartedNET_thumb.jpg" />
    </a>
     <div>
-   <a href="gettingstartednet.md"><strong>Primeros pasos con [!DNL Adobe PDF Services API] y .Net</strong></a>
+   <a href="gettingstartednet.md"><strong>Introducción a [!DNL Adobe PDF Services API] y .Net</strong></a>
     </div>
     <em>[!DNL Adobe PDF Services API] lo que proporciona a los desarrolladores libertad para elegir entre varios potentes servicios de manipulación de PDF para satisfacer las necesidades de complicados flujos de trabajo empresariales</em>
     <br>

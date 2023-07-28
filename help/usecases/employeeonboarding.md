@@ -4,31 +4,32 @@ description: Descubre cómo modernizar la incorporación de empleados con [!DNL 
 role: Developer
 level: Intermediate
 type: Tutorial
+feature: Use Cases
 thumbnail: KT-10203.jpg
 jira: KT-10203
 exl-id: 0186b3ee-4915-4edd-8c05-1cbf65648239
-source-git-commit: 2d1151c17dfcfa67aca05411976f4ef17adf421b
+source-git-commit: b65ffa3efa3978587564eb0be0c0e7381c8c83ab
 workflow-type: tm+mt
 source-wordcount: '1514'
 ht-degree: 1%
 
 ---
 
-# Modernizar la incorporación de empleados
+# Modernización de la incorporación de empleados
 
 ![Banner de caso de uso Hero](assets/usecaseemployeeonboardinghero.jpg)
 
 En una organización grande, la incorporación de empleados puede ser un proceso grande y lento. Normalmente, hay una mezcla de documentación personalizada junto con material repetitivo que debe presentar y firmar un nuevo empleado. Esta mezcla de materiales personalizados y repetitivos requiere varios pasos, lo que supone una pérdida de tiempo para las personas que participan en el proceso. [!DNL Adobe Acrobat Services] y Acrobat Sign pueden modernizar y automatizar este enfoque, liberando al personal de RR. HH. para las tareas más importantes. Echemos un vistazo a cómo se logra esto.
 
-## Qué son [!DNL Adobe Acrobat Services]?
+## ¿Qué son [!DNL Adobe Acrobat Services]?
 
-[[!DNL Adobe Acrobat Services]](https://developer.adobe.com/document-services/homepage) son un conjunto de API relacionadas con el trabajo con documentos (y no solo PDF). En general, este conjunto de servicios se divide en tres categorías principales:
+[[!DNL Adobe Acrobat Services]](https://developer.adobe.com/document-services/homepage) son un conjunto de API relacionadas con el trabajo con documentos (y no solo con PDF). En términos generales, este conjunto de servicios se divide en tres categorías principales:
 
-* Primero están los [Servicios de PDF](https://developer.adobe.com/document-services/apis/pdf-services/) conjunto de herramientas. Se trata de métodos &quot;útiles&quot; para trabajar con PDF y otros documentos. Los servicios incluyen cosas como convertir a y desde PDF, realizar OCR y optimización, fusionar y dividir PDF, etc. Es el conjunto de herramientas de las funciones de procesamiento de documentos.
+* Primero están los [Servicios de PDF](https://developer.adobe.com/document-services/apis/pdf-services/) conjunto de herramientas. Se trata de métodos &quot;útiles&quot; para trabajar con PDF y otros documentos. Los servicios incluyen cosas como la conversión a y desde PDF, la realización de OCR y optimización, la fusión y división de PDF, etc. Es el conjunto de herramientas de las funciones de procesamiento de documentos.
 * [API de PDF Extract](https://developer.adobe.com/document-services/apis/pdf-extract/) utiliza potentes técnicas de inteligencia artificial y aprendizaje automático para analizar a un PDF y proporcionar una increíble cantidad de detalles sobre su contenido. Esto incluye el texto, el estilo y la información de posición, y también puede devolver datos tabulares en formato CSV/XLS, así como recuperar imágenes.
-* Por último, [API de generación de documentos](https://developer.adobe.com/document-services/apis/doc-generation/) permite a los desarrolladores utilizar Microsoft Word como una &quot;plantilla&quot;, mezclar con sus datos (de cualquier origen) y generar documentos dinámicos personalizados (PDF y Word).
+* Por último, [API de generación de documentos](https://developer.adobe.com/document-services/apis/doc-generation/) permite a los desarrolladores utilizar Microsoft Word como una &quot;plantilla&quot;, mezclar con sus datos (de cualquier origen) y generar documentos dinámicos y personalizados (PDF y Word).
 
-Los desarrolladores pueden [registrarse](https://documentcloud.adobe.com/dc-integration-creation-app-cdn/main.html) y prueba todos estos servicios con una prueba gratis. La [!DNL Acrobat Services] La plataforma utiliza una API basada en REST, pero también admite SDK para Node, Java, .NET y Python (solo Extract en este momento).
+Los desarrolladores pueden [inscribirse](https://documentcloud.adobe.com/dc-integration-creation-app-cdn/main.html) y prueba todos estos servicios con una prueba gratis. La [!DNL Acrobat Services] La plataforma utiliza una API basada en REST, pero también admite SDK para Node, Java, .NET y Python (solo Extract en este momento).
 
 Aunque no es una API, los desarrolladores también pueden utilizar la [API de incrustación de PDF](https://developer.adobe.com/document-services/apis/pdf-embed/), que proporciona una experiencia de visualización coherente y flexible de los documentos con sus páginas web.
 
@@ -36,7 +37,7 @@ Aunque no es una API, los desarrolladores también pueden utilizar la [API de in
 
 [Acrobat Sign](https://www.adobe.com/es/sign.html_es) es líder mundial en servicios de firma electrónica. Puede enviar documentos para su firma mediante distintos flujos de trabajo, incluidas varias firmas. Acrobat Sign también admite flujos de trabajo que requieren firmas e información adicional. Todas estas funciones están respaldadas por un potente panel con un sistema de creación flexible.
 
-Como con [!DNL Acrobat Services], Acrobat Sign tiene un [prueba gratis](https://www.adobe.com/sign.html#sign_free_trial) que permite a los desarrolladores probar el proceso de firma tanto a través del panel como con una API basada en REST fácil de usar.
+Al igual que [!DNL Acrobat Services], Acrobat Sign tiene un [prueba gratis](https://www.adobe.com/sign.html#sign_free_trial) que permite a los desarrolladores probar el proceso de firma tanto a través del panel como con una API basada en REST fácil de usar.
 
 ## Un escenario de incorporación
 
@@ -44,14 +45,14 @@ Consideremos un escenario del mundo real que muestre cómo los servicios de Adob
 
 * En primer lugar, se necesita una carta de presentación personalizada que salude al nuevo empleado por su nombre. La carta debe contener información sobre el nombre, rol, salario y ubicación del empleado.
 * La carta personalizada debe combinarse con un PDF que contenga información básica de toda la empresa (piense en varias políticas de RR. HH., beneficios, etc.)
-* Se debe incluir un documento final que pida la firma y la fecha del empleado.
-* Todo lo anterior debe presentarse como un documento que se envía al empleado para su firma.
+* Se debe incluir un documento final en el que se solicite la firma y la fecha del empleado.
+* Todo lo anterior debe presentarse como un documento que se envía al empleado para que lo firme.
 
 Vamos a entrar en detalles sobre cómo hacer esto.
 
 ## Generación de documentos dinámicos
 
-de Adobe [Generación de documentos](https://developer.adobe.com/document-services/apis/doc-generation/) La API permite a los desarrolladores crear documentos dinámicos utilizando Microsoft Word y un sencillo lenguaje de plantillas, como base para generar PDF y documentos de Word. Este es un ejemplo de cómo funciona esto.
+Adobe&#39;s [Generación de documentos](https://developer.adobe.com/document-services/apis/doc-generation/) La API permite a los desarrolladores crear documentos dinámicos utilizando Microsoft Word y un sencillo lenguaje de plantillas, como base para generar PDF y documentos de Word. Este es un ejemplo de cómo funciona esto.
 
 Empecemos con un documento de Word que tenga valores codificados. El documento se puede aplicar cualquier estilo que desee, incluir gráficos, tablas, etc. Aquí está el documento inicial.
 
@@ -61,9 +62,9 @@ La generación de documentos funciona añadiendo &quot;tokens&quot; a un documen
 
 ![Captura de pantalla de Document Tagger](assets/onboarding_2.png)
 
-Puede cargar información JSON desde un archivo local, copiarla en texto JSON o seleccionar continuar con los datos iniciales. Si lo hace, podrá definir sus etiquetas de forma ad hoc según sus necesidades particulares. En este ejemplo, sólo se necesita una etiqueta para el nombre, la función, el salario y la ubicación. Para ello, utilice el **Crear etiqueta** botón:
+Puede cargar información JSON desde un archivo local, copiarla en texto JSON o seleccionar continuar con los datos iniciales. Si lo hace, podrá definir sus etiquetas de forma ad hoc en función de sus necesidades particulares. En este ejemplo, sólo se necesita una etiqueta para el nombre, la función, el salario y la ubicación. Esto se hace mediante el uso del **Crear etiqueta** botón:
 
-![Captura de pantalla de definición de una etiqueta](assets/onboarding_3.png)
+![Captura de pantalla de la definición de una etiqueta](assets/onboarding_3.png)
 
 Después de definir la primera etiqueta, puede seguir definiendo tantas como necesite:
 
@@ -147,10 +148,10 @@ La [API de servicios de PDF](https://developer.adobe.com/document-services/apis/
 * Exportar PDF a documentos de Office
 * Combinar y dividir PDF
 * Aplicación de OCR a PDF
-* Configuración, eliminación y modificación de la protección para PDF
+* Configuración, eliminación y modificación de la protección de los PDF
 * Eliminación, inserción, reordenación y rotación de páginas
 * Optimización de PDF mediante compresión o linealización
-* Obtener propiedades del PDF
+* Obtención de propiedades de PDF
 
 En este escenario, el resultado de la llamada de generación de documentos debe combinarse con un PDF estándar. Esta operación es bastante simple con los SDK. A continuación se muestra un ejemplo de en Node.js:
 
@@ -187,11 +188,11 @@ combineFilesOperation.execute(executionContext)
     });
 ```
 
-Este código toma los dos PDF, los combina y guarda el resultado en un nuevo PDF. ¡Simple y fácil! Consulte la [docs](https://developer.adobe.com/document-services/docs/overview/pdf-services-api/) para ver ejemplos de lo que se puede hacer.
+Este código toma los dos PDF, los combina y guarda el resultado en un nuevo PDF. ¡Sencillo y fácil! Consulte la [docs](https://developer.adobe.com/document-services/docs/overview/pdf-services-api/) para ver ejemplos de lo que se puede hacer.
 
 ## El proceso de firma
 
-En la etapa final del proceso de incorporación, el empleado debe firmar un acuerdo que indique que ha leído y está de acuerdo con todas las políticas definidas en. [Acrobat Sign](https://www.adobe.com/es/sign.html_es) admite muchos flujos de trabajo e integraciones diferentes, incluido uno automatizado mediante una [API](https://opensource.adobe.com/acrobat-sign/developer_guide/index.html). En términos generales, la parte final del escenario puede completarse de la siguiente manera:
+En la etapa final del proceso de incorporación, el empleado debe firmar un acuerdo que indique que ha leído y está de acuerdo con todas las políticas definidas en. [Acrobat Sign](https://www.adobe.com/es/sign.html_es) admite muchos flujos de trabajo e integraciones diferentes, incluido uno automatizado a través de una [API](https://opensource.adobe.com/acrobat-sign/developer_guide/index.html). En términos generales, la parte final del escenario puede completarse de la siguiente manera:
 
 En primer lugar, diseñe el documento que incluya el formulario que debe firmarse. Hay varias formas de hacerlo, incluida una imagen diseñada en el panel de usuario de Adobe Sign. Otra opción es utilizar el complemento Word Generación de documentos para insertar las etiquetas automáticamente. En este ejemplo se solicita una firma y una fecha.
 
@@ -203,8 +204,8 @@ La plantilla se puede cargar en el panel de Acrobat Sign y luego utilizarse para
 
 ![Captura de pantalla del documento firmado](assets/onboarding_11.png)
 
-## Experimenta tú mismo
+## Experiméntala tú mismo
 
-Todo lo que se describe en este artículo se puede probar ahora mismo. La [!DNL Adobe Acrobat Services] API [prueba gratis](https://documentcloud.adobe.com/dc-integration-creation-app-cdn/main.html) actualmente le ofrece 1000 solicitudes gratuitas durante un período de seis meses. Acrobat Sign [prueba gratis](https://www.adobe.com/sign.html#sign_free_trial) permite enviar acuerdos con marca de agua para su prueba.
+Todo lo que se describe en este artículo se puede probar ahora mismo. La [!DNL Adobe Acrobat Services] API [prueba gratis](https://documentcloud.adobe.com/dc-integration-creation-app-cdn/main.html) actualmente le ofrece 1000 solicitudes gratuitas durante un período de seis meses. Acrobat Sign [prueba gratis](https://www.adobe.com/sign.html#sign_free_trial) le permite enviar acuerdos con marca de agua para realizar pruebas.
 
-¿Tiene alguna pregunta? La [foro de asistencia](https://community.adobe.com/t5/document-services-apis/ct-p/ct-Document-Cloud-SDK) es monitoreado por desarrolladores de Adobes y personal de apoyo todos los días. Por último, para inspirarte más, asegúrate de coger la siguiente [Clips de papel](https://www.youtube.com/playlist?list=PLcVEYUqU7VRe4sT-Bf8flvRz1XXUyGmtF) episodio. Se celebran periódicamente reuniones en directo con los clientes, así como demostraciones y charlas.
+¿Tiene alguna pregunta? La [foro de asistencia](https://community.adobe.com/t5/document-services-apis/ct-p/ct-Document-Cloud-SDK) es monitoreado por los desarrolladores de Adobes y la gente de apoyo todos los días. Por último, para inspirarte más, asegúrate de coger la siguiente [Clips de papel](https://www.youtube.com/playlist?list=PLcVEYUqU7VRe4sT-Bf8flvRz1XXUyGmtF) episodio. Se celebran periódicamente reuniones en directo con los clientes, así como demostraciones y charlas.

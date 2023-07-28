@@ -4,10 +4,11 @@ description: Aprende a acelerar las ventas integrando experiencias con documento
 role: Developer
 level: Intermediate
 type: Tutorial
+feature: Use Cases
 thumbnail: KT-10222.jpg
 jira: KT-10222
 exl-id: 9430748f-9e2a-405f-acac-94b08ad7a5e3
-source-git-commit: 2d1151c17dfcfa67aca05411976f4ef17adf421b
+source-git-commit: b65ffa3efa3978587564eb0be0c0e7381c8c83ab
 workflow-type: tm+mt
 source-wordcount: '1755'
 ht-degree: 0%
@@ -24,7 +25,7 @@ Desde informes técnicos hasta contratos y acuerdos, se necesitan numerosos docu
 
 Los acuerdos de venta, los contratos y otros documentos pueden variar mucho según criterios específicos. Por ejemplo, un acuerdo de venta solo puede incluir determinados términos basados en criterios únicos, como estar en un país o estado específico, o incluir determinados productos como parte del acuerdo. La creación manual de estos documentos o el mantenimiento de muchas variaciones de plantillas diferentes pueden aumentar considerablemente los costes legales asociados a la revisión manual de los cambios.
 
-[API de generación de documentos de Adobe](https://developer.adobe.com/document-services/apis/doc-generation/) le permite tomar datos de su CRM u otro sistema de datos para generar dinámicamente documentos de ventas basados en esos datos.
+[API de generación de documentos de Adobe](https://developer.adobe.com/document-services/apis/doc-generation/) permite tomar datos de CRM u otro sistema de datos para generar dinámicamente documentos de ventas basados en esos datos.
 
 ## Obtener credenciales
 
@@ -37,7 +38,7 @@ Empiece registrándose para obtener las credenciales gratuitas de los servicios 
    ![Captura de pantalla de configuración del nombre de su credencial](assets/accsales_1.png)
 
 1. Elija un idioma para descargar el código de ejemplo (por ejemplo, Node.js).
-1. Marque para aceptar **[!UICONTROL términos para desarrolladores]**.
+1. Marque para aceptar **[!UICONTROL términos de desarrollador]**.
 1. Seleccionar **[!UICONTROL Crear credenciales]**.
 Se descarga un archivo en el equipo con un archivo ZIP que contiene los archivos de ejemplo pdfservices-api-credentials.json y private.key para la autenticación.
 
@@ -116,7 +117,7 @@ Este escenario utiliza un documento de pedido de venta, que se puede descargar [
 1. Abra el *SalesOrder.docx* documento de muestra en Microsoft Word.
 1. Si el plugin de generación de documentos está instalado, seleccione **[!UICONTROL Generación de documentos]** en la cinta de opciones. Si no ve Generación de documentos en la cinta, siga estas instrucciones.
 1. Seleccionar **[!UICONTROL Introducción]**.
-1. Copie los datos de ejemplo JSON escritos anteriormente en el *Datos JSON* campo.
+1. Copie los datos de ejemplo de JSON escritos anteriormente en el *Datos JSON* campo.
 
    ![Captura de pantalla de copia de datos JSON](assets/accsales_4.png)
 
@@ -142,7 +143,7 @@ A continuación, vaya al panel Etiquetador de generación de documentos para col
    }
    ```
 
-Repita estas acciones para algunas de las etiquetas adicionales del documento, como DIRECCIÓN, CIUDAD, ESTADO, ZIP, etc.
+Repita estas acciones para algunas de las etiquetas adicionales del documento, como STREET ADDRESS, CITY, STATE, ZIP, etc.
 
 ## Vista previa del documento generado
 
@@ -156,7 +157,7 @@ Directamente en Microsoft Word, puede obtener una vista previa del documento gen
 
    ![Captura de pantalla del botón Ver documento](assets/accsales_7.png)
 
-1. Se abrirá una ventana del navegador que le permitirá previsualizar los resultados del documento.
+1. Se abre una ventana del navegador que le permite obtener una vista previa de los resultados del documento.
 
    ![Captura de pantalla del documento en la ventana del navegador](assets/accsales_8.png)
 
@@ -175,7 +176,7 @@ En el siguiente escenario, agregue una lista de productos a una tabla del docume
 1. En el campo Seleccionar registros de columna, escriba para incluir *descripción* y *totalPaymentDue.price* campo.
 1. Seleccionar **[!UICONTROL Insertar tabla]**.
 
-   ![Captura de pantalla de insertar tabla](assets/accsales_10.png)
+   ![Captura de pantalla de inserción de tabla](assets/accsales_10.png)
 
 Edite la tabla para realizar ajustes de estilos, tamaños y otros parámetros como lo haría con cualquier otra tabla de Microsoft Word.
 
@@ -185,24 +186,24 @@ Los cálculos numéricos permiten calcular sumas y otros cálculos basados en un
 
 1. Seleccione la *$0,00* junto al título del subtotal.
 1. En la *[!UICONTROL Etiquetador de generación de documentos]* panel, expandir **[!UICONTROL Cálculos numéricos]**.
-1. Bajo *[!UICONTROL Seleccionar tipo de cálculo]*, elija **[!UICONTROL Agregación]**.
-1. Bajo *[!UICONTROL Seleccionar tipo]*, elija **[!UICONTROL Suma]**.
-1. Bajo *[!UICONTROL Seleccionar registros]*, elija **[!UICONTROL ReferencesOrder]**.
+1. Debajo *[!UICONTROL Seleccionar tipo de cálculo]*, elija **[!UICONTROL Agregación]**.
+1. Debajo *[!UICONTROL Seleccionar tipo]*, elija **[!UICONTROL Suma]**.
+1. Debajo *[!UICONTROL Seleccionar registros]*, elija **[!UICONTROL ReferencesOrder]**.
 1. En *[!UICONTROL Seleccionar elemento para realizar la agregación]**, elija **[!UICONTROL totalPaymentsDue.price]**.
 1. Seleccionar **[!UICONTROL Insertar cálculo]**.
 
-Este proceso inserta una etiqueta de cálculo que proporciona la suma de valores. Se pueden realizar cálculos más avanzados utilizando cálculos JSONata. Por ejemplo:
+Este proceso inserta una etiqueta de cálculo que proporciona la suma de los valores. Se pueden realizar cálculos más avanzados utilizando cálculos JSONata. Por ejemplo:
 
 * Subtotal: `${{expr($sum(referencesOrder.totalPaymentDue.price))}}`
 Calcula la suma de las referenciasOrder.totalPaymentDue.price.
 
 * Impuesto de ventas: `${{expr($sum(referencesOrder.totalPaymentDue.price)*0.08)}}`
-Calcula el precio y multiplica por 8% para calcular el impuesto.
+Calcula el precio y lo multiplica por 8% para calcular el impuesto.
 
 * Vencimiento total: `${{expr($sum(referencesOrder.totalPaymentDue.price)*1.08)}}`
 Calcula el precio y múltiplos de 1,08 para calcular el subtotal + impuestos.
 
-## Añadir condiciones
+## Añadir términos condicionales
 
 Las secciones condicionales permiten incluir solo una oración o un párrafo cuando se cumple una determinada condición. En este escenario, solo se incluye una sección si coincide con un determinado estado.
 
@@ -226,7 +227,7 @@ A continuación, seleccione la sección de DECLARACIONES DE PRIVACIDAD DE WASHIN
 
 La API de generación de documentos permite insertar imágenes dinámicamente a partir de datos. Esto resulta útil cuando tiene diferentes submarcas y desea cambiar logotipos, imágenes de retratos o imágenes para que sean más relevantes para un sector determinado.
 
-Las imágenes se pueden pasar por una dirección URL en los datos o contenido base64. En este ejemplo se utiliza una dirección URL.
+Las imágenes se pueden pasar por una dirección URL en los datos o contenido base64. Este ejemplo utiliza una dirección URL.
 
 1. Coloque el cursor donde desee incluir una imagen.
 1. En la *[!UICONTROL Etiquetador de generación de documentos]* panel, seleccionar **[!UICONTROL Avanzado]**.
@@ -275,7 +276,7 @@ Acrobat Sign proporciona otros tipos de campos que puede colocar, como los campo
 1. Mueva el cursor por encima de la ubicación Fecha en el documento.
 1. Seleccionar **[!UICONTROL Insertar etiqueta de texto de Adobe Sign]**.
 
-![Captura de pantalla de la etiqueta de fecha del documento](assets/accsales_16.png)
+![Captura de pantalla de la etiqueta de fecha en el documento](assets/accsales_16.png)
 
 ## Generar el acuerdo
 
@@ -349,7 +350,7 @@ Una vez generado el documento, puede realizar acciones adicionales como:
 * Comprimir el PDF si hay imágenes grandes
 * Capturar firmas electrónicas en el documento
 
-Para obtener más información sobre otras acciones disponibles, consulte los scripts de la carpeta /src en los archivos de ejemplo. También puede obtener más información revisando la documentación de las diferentes acciones.
+Para obtener más información sobre algunas de las otras acciones disponibles, consulte los scripts de la carpeta /src en los archivos de ejemplo. También puede obtener más información revisando la documentación de las diferentes acciones.
 
 ## Casos de uso adicionales
 
@@ -357,7 +358,7 @@ Para obtener más información sobre otras acciones disponibles, consulte los sc
 
 * Utiliza la API Adobe PDF Embed para insertar informes técnicos y otro contenido en sitios web, al tiempo que mide y recopila análisis del público
 * Usar Acrobat Sign para capturar firmas electrónicas en los acuerdos generados
-* Extraer datos del acuerdo de los documentos del PDF mediante la API Adobe PDF Extract
+* Extraer datos del acuerdo de los documentos del PDF mediante la API de Adobe PDF Extract
 
 ## Formación continua
 

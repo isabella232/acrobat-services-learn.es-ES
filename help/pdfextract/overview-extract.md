@@ -4,10 +4,11 @@ description: Página de información general de la API Adobe PDF Extract
 type: Tutorial
 role: Developer
 skill: Beginner, Intermediate, Experienced
+feature: PDF Extract API
 thumbnail: KT-9247.jpg
 jira: KT-9247
 exl-id: db340959-e7dc-4e46-939d-3b8c29749ebd
-source-git-commit: 2d1151c17dfcfa67aca05411976f4ef17adf421b
+source-git-commit: b65ffa3efa3978587564eb0be0c0e7381c8c83ab
 workflow-type: tm+mt
 source-wordcount: '113'
 ht-degree: 0%
@@ -22,16 +23,16 @@ Desbloquea la estructura y los elementos de contenido de cualquier PDF con un se
 
 >[!NOTE]
 >
->La API de PDF Extract se incluye en la API de PDF Services.
+>La API de PDF Extract se incluye en la API de servicios de PDF.
 
 <table style="table-layout:fixed">
 <tr>
  <td>
    <a href="https://experienceleague.adobe.com/docs/adobe-developers-live-events/events/2021/oct2021/parsing-pdf.html">
-      <img alt="PDF de análisis: Tan fácil como trabajar con datos JSON con la API PDF Extract" src="assets/ParsingPDF_1280.png" />
+      <img alt="Analizar PDF: tan fácil como trabajar con datos JSON con la API PDF Extract" src="assets/ParsingPDF_1280.png" />
    </a>
     <div>
-   <a href="https://experienceleague.adobe.com/docs/adobe-developers-live-events/events/2021/oct2021/parsing-pdf.html"><strong>PDF de análisis: Tan fácil como trabajar con datos JSON con la API PDF Extract</strong></a>
+   <a href="https://experienceleague.adobe.com/docs/adobe-developers-live-events/events/2021/oct2021/parsing-pdf.html"><strong>Analizar PDF: tan fácil como trabajar con datos JSON con la API PDF Extract</strong></a>
     </div>
     <em>Obtenga más información sobre cómo el servicio Extract de PDF en la API de servicios de Adobe PDF puede facilitar el análisis de PDF tanto como el análisis de JSON</em>
     <br>

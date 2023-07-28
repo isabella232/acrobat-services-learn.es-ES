@@ -4,17 +4,18 @@ description: Descubre cómo automatizar los flujos de trabajo legales con conten
 role: Developer
 level: Intermediate
 type: Tutorial
+feature: Use Cases
 thumbnail: KT-10202.jpg
 jira: KT-10202
 exl-id: 2a1752b8-9641-40cc-a0af-1dce6cf49346
-source-git-commit: 2d1151c17dfcfa67aca05411976f4ef17adf421b
+source-git-commit: b65ffa3efa3978587564eb0be0c0e7381c8c83ab
 workflow-type: tm+mt
 source-wordcount: '2876'
 ht-degree: 1%
 
 ---
 
-# Automatizar flujos de trabajo legales
+# Automatiza los flujos de trabajo legales
 
 ![Banner de caso de uso Hero](assets/usecaseautomatelegalhero.jpg)
 
@@ -33,7 +34,7 @@ Empiece registrándose para obtener las credenciales gratuitas de los servicios 
    ![Captura de pantalla de configuración del nombre de su credencial](assets/automatelegal_1.png)
 
 1. Elija un idioma para descargar el código de ejemplo (por ejemplo, Node.js).
-1. Marque para aceptar **[!UICONTROL términos para desarrolladores]**.
+1. Marque para aceptar **[!UICONTROL términos de desarrollador]**.
 1. Seleccionar **[!UICONTROL Crear credenciales]**.
 Se descarga un archivo en el equipo con un archivo ZIP que contiene los archivos de ejemplo pdfservices-api-credentials.json y private.key para la autenticación.
 
@@ -83,9 +84,9 @@ En los datos, hay información sobre el cliente, su nombre, quién firma, el est
 
 ## Añadir etiquetas básicas al documento
 
-En este escenario se utiliza un documento de términos y condiciones que se puede descargar [aquí](https://github.com/benvanderberg/adobe-document-generation-samples/blob/main/Agreement/exercise/TermsAndConditions_Sample.docx?raw=true).
+En este escenario se utiliza un documento de términos y condiciones, que se puede descargar [aquí](https://github.com/benvanderberg/adobe-document-generation-samples/blob/main/Agreement/exercise/TermsAndConditions_Sample.docx?raw=true).
 
-![Captura de pantalla del documento Términos y condiciones](assets/automatelegal_3.png)
+![Captura de pantalla del documento de Términos y condiciones](assets/automatelegal_3.png)
 
 1. Abra el *TermsAndConditions.docx* documento de muestra en Microsoft Word.
 1. Si el [Generación de documentos](https://appsource.microsoft.com/en-cy/product/office/WA200002654) el plugin está instalado, seleccione **[!UICONTROL Generación de documentos]** en la cinta de opciones. Si no ve Generación de documentos en la cinta, siga estas instrucciones.
@@ -118,9 +119,9 @@ Esto coloca una etiqueta denominada `{{company.name}}` porque la etiqueta está 
 }
 ```
 
-A continuación, repita este paso en la sección de apertura del texto CUSTOMER. Repetir **pasos 1-4**, sustituyendo CLIENTE por &quot;nombre&quot; en cliente. El resultado debe ser `{{customer.name}}`, reflejando que el texto procede de debajo del objeto cliente.
+A continuación, repita este paso en la sección de apertura del texto CUSTOMER. Repetir **pasos 1-4**, sustituyendo CLIENTE por &quot;nombre&quot; en cliente. El resultado debe ser `{{customer.name}}`, lo que refleja que el texto procede de debajo del objeto de cliente.
 
-La API de generación de documentos de Adobe también permite incluir etiquetas en los encabezados y pies de página, así como en el extremo en el que deben ir los títulos de las firmas.
+La API de generación de documentos de Adobe también permite incluir etiquetas en los encabezados y pies de página, así como en el extremo en el que se deben incluir los títulos de las firmas.
 
 Repita este proceso de nuevo con **pasos 1-4** para el texto EMPRESA y CLIENTE en el pie de página.
 
@@ -134,7 +135,7 @@ El principio del documento y el pie de página deben tener un aspecto similar al
 
 ![Captura de pantalla de la sección inicial](assets/automatelegal_7.png)
 
-* Pie de página:
+* Pie:
 
 ![Captura de pantalla del pie](assets/automatelegal_8.png)
 
@@ -157,7 +158,7 @@ Directamente en Microsoft Word, puede obtener una vista previa del documento gen
 
    ![Captura de pantalla del botón Ver documento](assets/automatelegal_11.png)
 
-1. Se abrirá una ventana del navegador, que le permitirá previsualizar los resultados del documento.
+1. Se abrirá una ventana del navegador, que le permitirá obtener una vista previa de los resultados del documento.
 
    ![Captura de pantalla de texto específico de estado](assets/automatelegal_12.png)
 
@@ -180,11 +181,11 @@ En la siguiente sección, se establecen sólo determinadas secciones que se incl
 1. En *[!UICONTROL Valor]* campo, tipo *CA*.
 1. Seleccionar **[!UICONTROL Insertar condición]**.
 
-Ahora, la sección se envuelve con algunas etiquetas denominadas etiquetas de sección condicional. Al añadir las etiquetas, es posible que haya añadido la etiqueta de sección condicional como una línea numerada. Puede eliminarla colocando un espaciado posterior delante de la etiqueta; de lo contrario, numerará los elementos como si la etiqueta no estuviera allí cuando se genere el documento. La sección que es condicional termina con la `{% end-section %}` etiqueta.
+Ahora, la sección se envuelve con algunas etiquetas denominadas etiquetas de sección condicional. Al añadir las etiquetas, es posible que haya añadido la etiqueta de sección condicional como una línea numerada. Puede eliminarla colocando un espaciado hacia atrás delante de la etiqueta; de lo contrario, numerará los elementos como si la etiqueta no estuviera allí cuando se genere el documento. La sección que es condicional termina con la `{% end-section %}` etiqueta.
 
 ![Captura de pantalla de la etiqueta de sección condicional](assets/automatelegal_16.png)
 
-**Repita los pasos 1-7** para el *Washington Disclosure* , reemplazar la sección *CA* valorar con *WA* para representar que la sección solo se muestra si el estado del cliente es Washington.
+**Repita los pasos 1-7** para el *Divulgación de Washington* , reemplazar la sección *CA* valorar con *WA* para representar que la sección solo se muestra si el estado del cliente es Washington.
 
 ![Captura de pantalla de la etiqueta de sección condicional para WA](assets/automatelegal_17.png)
 
@@ -192,7 +193,7 @@ Ahora, la sección se envuelve con algunas etiquetas denominadas etiquetas de se
 
 Una vez establecidas las secciones condicionales, puede obtener una vista previa del documento seleccionando **Generar documento**.
 
-Al generar el documento, observe que la sección que se incluye es únicamente la que cumple los criterios de datos. En el ejemplo siguiente, como el estado era igual a CA, solo se incluye la sección California.
+Al generar el documento, observe que la sección que se incluye es únicamente la que cumple los criterios de datos. En el ejemplo siguiente, dado que el estado era igual a CA, solo se incluye la sección California.
 
 ![Captura de pantalla de información de divulgación de California](assets/automatelegal_18.png)
 
@@ -200,7 +201,7 @@ Otro cambio notable es que la numeración de la sección posterior, Uso de los S
 
 ![Captura de pantalla de numeración continua](assets/automatelegal_19.png)
 
-Para comprobar si la plantilla se comporta correctamente cuando el cliente se encuentra en el estado de Washington en lugar de California, cambie los datos de ejemplo de la plantilla:
+Para comprobar si la plantilla se comporta correctamente cuando el cliente se encuentra en el estado de Washington en lugar de en California, cambie los datos de ejemplo de la plantilla:
 
 1. En *Etiquetador de generación de documentos*, seleccione **[!UICONTROL Editar datos de entrada]**.
 
@@ -226,7 +227,7 @@ Al igual que las secciones condicionales, también puede tener frases específic
 1. En la sección 3.1, seleccione la primera frase &quot;Cuando compre en el estado de Washington, uno debe ser devuelto por CORREO dentro de los 30 días de la transacción original para un reembolso completo.&quot;
 1. En *[!UICONTROL Etiquetador de generación de documentos]*, seleccione **[!UICONTROL Avanzado]**.
 1. Expandir **[!UICONTROL Contenido condicional]**.
-1. Bajo *[!UICONTROL Tipo de contenido]*, seleccione **[!UICONTROL Frase]**.
+1. Debajo *[!UICONTROL Tipo de contenido]*, seleccione **[!UICONTROL Frase]**.
 1. En *[!UICONTROL Seleccionar registros]* campo, buscar y seleccionar **[!UICONTROL customer.state]**.
 1. En *[!UICONTROL Seleccionar operador]* , seleccione **=**.
 1. En *[!UICONTROL Valor]* campo, tipo *CA*.
@@ -238,7 +239,7 @@ Aunque el nombre de la etiqueta es el mismo, la principal diferencia entre Phras
 
 ## Añadir etiquetas para Acrobat Sign
 
-Acrobat Sign le permite enviar acuerdos para su firma o incrustarlos en la experiencia web para que alguien los vea y firme fácilmente. El etiquetador de generación de documentos de Adobe en Microsoft Word le permite preetiquetar fácilmente los documentos antes de enviarlos con Acrobat Sign, de modo que las firmas siempre se colocan en la ubicación correcta. En este escenario, hay dos firmantes que necesitan un lugar para firmar y fechar el documento.
+Acrobat Sign le permite enviar acuerdos para su firma o incrustarlos en la experiencia web para que alguien los vea y firme fácilmente. El etiquetador de generación de documentos de Adobe en Microsoft Word le permite preetiquetar fácilmente los documentos antes de que se envíen con Acrobat Sign, de modo que las firmas siempre se colocan en la ubicación correcta. En este escenario, hay dos firmantes que necesitan un lugar para firmar y fechar el documento.
 
 1. Vaya a la ubicación donde debe firmar el cliente.
 1. Sitúe el cursor donde debe ir la firma.
@@ -265,14 +266,14 @@ A continuación, coloque un campo de datos para el firmante que se rellena autom
 
 1. Mueva el cursor donde se debe colocar la fecha.
 
-   ![Captura de pantalla de la ubicación de la fecha](assets/automatelegal_27.png)
+   ![Captura de pantalla de dónde debe ubicarse la fecha](assets/automatelegal_27.png)
 
 1. Establezca Tipo de campo en Fecha.
 1. Seleccionar **[!UICONTROL Insertar etiqueta de texto de Adobe Sign]**.
 
 La etiqueta de fecha que se coloca es bastante larga: `{{Date 3_es_:signer1:date:format(mm/dd/yyyy):font(size=Auto)}}`. La etiqueta de texto de Acrobat Sign debe permanecer en la misma línea, que es diferente de las etiquetas de generación de documentos. La `:format()` y `font()` los parámetros son opcionales, por lo que en este escenario podemos acortar la etiqueta a `{{Date 3_es_:signer1:date}}`.
 
-Repita los pasos anteriores al *Firma de empresa* sección. Al hacerlo, debe cambiar el campo Destinatarios a **Signer-2**, de lo contrario, todos los campos de firma se asignan a la misma persona.
+Repita los pasos anteriores al *Firma de la empresa* sección. Al hacerlo, debe cambiar el campo Destinatarios a **Signer-2**, de lo contrario, todos los campos de firma se asignan a la misma persona.
 
 ## Generar el acuerdo
 
@@ -282,7 +283,7 @@ Abra el archivo pdfservices-node-sdk-samples-master que descargó al registrar s
 
 1. Abra el **[!UICONTROL Terminal]** para instalar dependencias mediante `npm install`.
 1. Copiar la muestra *data.json* en el *resources* carpeta.
-1. Copie la plantilla de Word que creó en el *resources* carpeta.
+1. Copie la plantilla de Word que ha creado en el *resources* carpeta.
 1. Cree un nuevo archivo en el directorio raíz de la carpeta samples denominada *generate-salesOrder.js*.
 
    ```
@@ -363,11 +364,11 @@ var outputFileName = path.join('output', 'salesOrder_'+Date.now()+".docx");
 
 [Adobe Acrobat Sign](https://www.adobe.com/es/sign.html_es) permite enviar acuerdos a uno o varios destinatarios para que estos puedan ver y firmar documentos. Junto con una experiencia de usuario fácil de usar para enviar un documento para firmar, hay disponibles API REST que le permiten usar Word, PDF, HTML y otros formatos y enviarlos para firmar.
 
-En el ejemplo siguiente se explica cómo utilizar la página de documentación de la API REST para realizar el documento generado anteriormente y enviarlo para su firma. Primero, aprende cómo puedes hacerlo a través de la interfaz web de Acrobat Sign y, después, cómo hacerlo con la API REST.
+En el ejemplo siguiente se explica cómo utilizar la página de documentación de la API REST para realizar el documento generado anteriormente y enviarlo para su firma. En primer lugar, aprende cómo puedes hacerlo a través de la interfaz web de Acrobat Sign y, a continuación, cómo hacerlo con la API REST.
 
 ## Obtener una cuenta de Acrobat Sign
 
-Si no tiene una cuenta de Acrobat Sign, regístrese para obtener una cuenta de desarrollador y consulte la documentación [aquí](https://developer.adobe.com/adobesign-api/)y seleccione **Registro de cuenta de desarrollador**. Se le pedirá que rellene un formulario y reciba un correo electrónico de verificación. Una vez hecho esto, se le dirigirá a un sitio web para establecer su contraseña y cuenta, donde podrá iniciar sesión en Acrobat Sign.
+Si no tiene una cuenta de Acrobat Sign, regístrese para obtener una cuenta de desarrollador y consulte la documentación [aquí](https://developer.adobe.com/adobesign-api/)y seleccione **Registro de cuenta de desarrollador**. Se le pedirá que rellene un formulario y reciba un correo electrónico de verificación. Una vez hecho esto, se le dirigirá a un sitio web para que establezca su contraseña y su cuenta, donde podrá iniciar sesión en Acrobat Sign.
 
 ## Enviar un acuerdo desde la interfaz web
 
@@ -393,7 +394,7 @@ Si no tiene una cuenta de Acrobat Sign, regístrese para obtener una cuenta de d
    ![Captura de pantalla del mensaje de correo electrónico](assets/automatelegal_31.png)
 
 1. Seleccionar **[!UICONTROL Revisar y firmar]**.
-1. Seleccionar **[!UICONTROL Continuar]** aceptar las condiciones de uso.
+1. Seleccionar **[!UICONTROL Continuar]** para aceptar las condiciones de uso.
 1. Seleccionar **[!UICONTROL Inicio]** para ir adonde tienes que firmar.
 
    ![Captura de pantalla de la etiqueta de inicio](assets/automatelegal_32.png)
@@ -411,7 +412,7 @@ Si no tiene una cuenta de Acrobat Sign, regístrese para obtener una cuenta de d
 
 Se enviará un correo electrónico al siguiente firmante. Repita los pasos del 9 al 16 para ver y firmar para el segundo firmante.
 
-Una vez completado el acuerdo, se envía una copia firmada del mismo por correo electrónico a cada una de las partes. Además, se puede recuperar un acuerdo firmado desde la interfaz web de Acrobat Sign en el **Administrar** página.
+Una vez completado el acuerdo, se envía una copia firmada del mismo por correo electrónico a cada una de las partes. Además, se puede recuperar un acuerdo firmado desde la interfaz web de Acrobat Sign en el **Gestionar** página.
 
 ![Captura de pantalla de la pestaña Gestionar en Acrobat Sign](assets/automatelegal_35.png)
 
@@ -425,10 +426,10 @@ A continuación, obtenga información sobre cómo hacer el mismo escenario a tra
 
    ![Captura de pantalla de dónde seleccionar OAUTH ACCESS-TOKEN](assets/automatelegal_36.png)
 
-1. Compruebe los permisos de OAUTH para *agreement_write*, *agreement_sign*, *widget_write* y *library_write*.
+1. Compruebe los permisos de OAUTH para *agreement_write*, *agreement_sign*, *widget_write*, y *library_write*.
 1. Seleccionar **[!UICONTROL Autorizar]**.
 1. Se le pedirá mediante una ventana emergente que inicie sesión con su cuenta de Acrobat Sign. Usuario de inicio de sesión: nombre de usuario y contraseña del administrador.
-1. Se le pedirá que permita el acceso a la documentación de REST. Seleccionar **[!UICONTROL Permitir acceso]**.
+1. Se le solicitará que permita el acceso a la documentación de REST. Seleccionar **[!UICONTROL Permitir acceso]**.
 
 A continuación, se añade un token de portador al **Autorización** campo.
 
@@ -440,7 +441,7 @@ Como el token de autorización se añade a partir de los pasos anteriores, debe 
 
 1. En *Archivo* , cargue el documento de PDF generado en los pasos anteriores.
 
-   ![Captura de pantalla de dónde cargar el PDF](assets/automatelegal_37.png)
+   ![Captura de pantalla de dónde cargar PDF](assets/automatelegal_37.png)
 
 1. Seleccionar **[!UICONTROL ¡Pruébalo!]**.
 1. En **[!UICONTROL Cuerpo de respuesta]**, copie el *transientDocumentId* valor.
@@ -496,7 +497,7 @@ Una vez cargado un documento, debe enviar el acuerdo para su firma.
 Una vez que tenga un ID de acuerdo, puede enviar el estado de un acuerdo.
 
 1. Expandir **[!UICONTROL GET /acuerdos/{agreementId}]**.
-1. Como puede que necesite un ámbito de OAUTH adicional, seleccione **[!UICONTROL OAUTH-ACCESS-TOKEN]** otra vez.
+1. Debido a que puede necesitar un ámbito de OAUTH adicional, seleccione **[!UICONTROL OAUTH-ACCESS-TOKEN]** otra vez.
 1. Copie el agreementId de la respuesta de llamada de API anterior en el campo agreementId.
 1. Seleccionar **[!UICONTROL ¡Pruébalo!]**.
 

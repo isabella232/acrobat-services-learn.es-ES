@@ -1,20 +1,21 @@
 ---
-title: Obtención de credenciales para Microsoft Power Automate
+title: Obtener credenciales para Microsoft Power Automate
 description: Obtenga información sobre cómo obtener credenciales para empezar a utilizar o probar los servicios de Adobe PDF
 type: Tutorial
 role: Developer
 level: Beginner
+feature: PDF Services API
 thumbnail: KT-10382.jpg
 jira: KT-10382
 exl-id: 68ec654f-74aa-41b7-9103-44df13402032
-source-git-commit: 2d1151c17dfcfa67aca05411976f4ef17adf421b
+source-git-commit: b65ffa3efa3978587564eb0be0c0e7381c8c83ab
 workflow-type: tm+mt
 source-wordcount: '918'
 ht-degree: 3%
 
 ---
 
-# Obtención de credenciales para Microsoft Power Automate
+# Obtener credenciales para Microsoft Power Automate
 
 [Microsoft Power Automate](https://powerautomate.microsoft.com/es-es/) proporciona una forma eficaz para que los desarrolladores y desarrolladores ciudadanos creen potentes procesos automatizados para mejorar sus negocios sin escribir código. [Servicios de Adobe PDF](https://us.flow.microsoft.com/es-es/connectors/shared_adobepdftools/adobe-pdf-services/) conector, como parte de [[!DNL Adobe Acrobat Services]](https://developer.adobe.com/document-services), permite a los usuarios realizar cualquiera de las acciones disponibles en la API de servicios de Adobe PDF en Microsoft Power Automate.
 
@@ -22,7 +23,7 @@ En este tutorial, aprenderá a obtener credenciales para empezar a utilizar o pr
 
 ## ¿Cómo pueden los usuarios de Microsoft Power Automate empezar a utilizar el conector de Adobe PDF Services?
 
-Los usuarios existentes de Microsoft Power Automate pueden [obtener credenciales de prueba](https://www.adobe.com/go/powerautomate_getstarted) para los servicios de Adobe PDF. El vínculo anterior es un vínculo de registro especial que ayuda en este proceso específicamente para los usuarios de Microsoft Power Automate.
+Los usuarios existentes de Microsoft Power Automate pueden [obtener credenciales de prueba](https://www.adobe.com/go/powerautomate_getstarted) para Adobe PDF Services. El vínculo anterior es un vínculo de registro especial que ayuda en este proceso específicamente para los usuarios de Microsoft Power Automate.
 
 ![Inicio de sesión de usuario de Adobe Developer](assets/credentials_1.png)
 
@@ -75,8 +76,8 @@ Ahora que ya tiene sus credenciales, puede empezar a usarlas en los flujos de Mi
 
    ![Lista de conexiones de Adobe](assets/credentials_5.png)
 
-1. Seleccionar **[!UICONTROL Adobe PDF Services (previsualización)]**.
-1. En la ventana modal, introduzca los cinco valores generados anteriormente. Seleccionar **[!UICONTROL Crear]** cuando haya terminado.
+1. Seleccionar **[!UICONTROL Servicios de Adobe PDF (previsualización)]**.
+1. En la ventana modal, introduzca los cinco valores que generó anteriormente. Seleccionar **[!UICONTROL Crear]** cuando haya terminado.
 
    ![Campos de formulario para introducir información de credenciales](assets/credentials_6.png)
 
@@ -87,15 +88,15 @@ Ya puede utilizar los servicios de Adobe PDF en Microsoft Power Automate.
 Si ya ha creado credenciales y ha colocado incorrectamente las credenciales descargadas, puede recuperarlas de nuevo en [Adobe Developer Console](https://developer.adobe.com/console).
 
 1. Después de iniciar sesión en [Adobe Developer Console](https://developer.adobe.com/console), busque primero el proyecto y selecciónelo.
-1. En el menú de la izquierda, bajo *Credenciales*, seleccione **Cuenta de servicio (JWT)**:
+1. En el menú de la izquierda, debajo de *Credenciales*, seleccione **Cuenta de servicio (JWT)**:
 
    ![Credenciales existentes](assets/credentials_7.png)
 
-1. Tenga en cuenta los cinco valores que se presentan aquí: *ID de cliente*, *Secreto de cliente*, *ID de cuenta técnica*, *Correo electrónico de cuenta técnica* y *ID de organización*.
+1. Tenga en cuenta los cinco valores que se presentan aquí: *ID de cliente*, *Secreto de cliente*, *ID de cuenta técnica*, *Correo electrónico de cuenta técnica*, y *ID de organización*.
 
 Desafortunadamente, no puede descargar la clave privada anterior, pero puede utilizar el botón &quot;Generar un par de claves pública/privada&quot; para crear una nueva.
 
-## Usar las credenciales existentes de Adobe PDF Services
+## Uso de las credenciales existentes de Adobe PDF Services
 
 Si tiene credenciales de API de servicios de Adobe PDF existentes generadas a partir de [!DNL Adobe Acrobat Services] , puede utilizarlas con Microsoft Power Automate. Si descargaste un SDK al registrarte, tus credenciales existentes vendrían en forma de un archivo JSON con el nombre más probable `pdfservices-api-credentials.json`. Ese archivo JSON contiene las cinco claves necesarias para crear las credenciales de conexión. Copie cada valor del archivo JSON en el campo de conexión correspondiente.
 
@@ -113,7 +114,7 @@ Como se describe al principio de este tutorial, cree un nuevo flujo, agregue un 
 
 ![Advertencia de cuenta premium](assets/credentials_9.png)
 
-Como muestra la captura de pantalla anterior, puede cambiar a una cuenta de trabajo o configurar una nueva cuenta de organización. Una vez que lo haya hecho, podrá añadir la acción Servicios de Adobe PDF .
+Como se muestra en la captura de pantalla anterior, puede cambiar a una cuenta de trabajo o configurar una nueva cuenta de organización. Una vez que lo haya hecho, podrá añadir la acción Servicios de Adobe PDF .
 
 Para obtener una visión más profunda al crear tu primer flujo de Microsoft Power Automate con [!DNL Adobe Acrobat Services], consulte [Crea tu primer flujo de trabajo en Microsoft Power Automate](https://experienceleague.adobe.com/docs/document-services/tutorials/pdfservices/create-workflow-power-automate.html).
 

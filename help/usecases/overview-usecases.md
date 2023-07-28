@@ -4,10 +4,11 @@ description: Página Resumen de [!DNL Adobe Acrobat Services] Casos prácticos d
 type: Tutorial
 role: Developer
 level: Beginner, Intermediate, Experienced
+feature: Use Cases
 thumbnail: KT-8115.jpg
 jira: KT-8115
 exl-id: 4188897e-f6e6-41ea-be6f-359a3ef0e040
-source-git-commit: 2d1151c17dfcfa67aca05411976f4ef17adf421b
+source-git-commit: b65ffa3efa3978587564eb0be0c0e7381c8c83ab
 workflow-type: tm+mt
 source-wordcount: '375'
 ht-degree: 0%
@@ -18,7 +19,7 @@ ht-degree: 0%
 
 ![[!DNL Acrobat Services] Banner de caso de uso de API](../assets/usecaseshero.jpg)
 
-## ¿Qué puede [!DNL Adobe Acrobat Services] ¿Las API funcionan para mí?
+## ¿Qué puede hacer el [!DNL Adobe Acrobat Services] ¿Las API funcionan para mí?
 
 Descubre cómo la [!DNL Adobe Acrobat Services] Las API pueden cambiar tu negocio con estos casos prácticos.
 
@@ -28,20 +29,20 @@ Descubre cómo la [!DNL Adobe Acrobat Services] Las API pueden cambiar tu negoci
 <tr>
   <td>
     <a href="automatelegalworkflows.md">
-      <img alt="Automatizar flujos de trabajo legales" src="assets/automatelegal_thumb.png" />
+      <img alt="Automatiza los flujos de trabajo legales" src="assets/automatelegal_thumb.png" />
     </a>
     <div>
-    <a href="automatelegalworkflows.md"><strong>Automatizar flujos de trabajo legales</strong></a>
+    <a href="automatelegalworkflows.md"><strong>Automatiza los flujos de trabajo legales</strong></a>
     </div>
     <em>Descubre cómo automatizar los flujos de trabajo legales con contenido condicional</em>
     <br>
   </td>
   <td>
       <a href="employeeonboarding.md">
-        <img alt="Modernizar la incorporación de empleados" src="assets/employee_thumb.png" />
+        <img alt="Modernización de la incorporación de empleados" src="assets/employee_thumb.png" />
       </a>
       <div>
-      <a href="employeeonboarding.md"><strong>Modernizar la incorporación de empleados</strong></a>
+      <a href="employeeonboarding.md"><strong>Modernización de la incorporación de empleados</strong></a>
       </div>
       <em>Aprende a modernizar la incorporación de empleados</em>
       <br>
@@ -169,7 +170,7 @@ Descubre cómo la [!DNL Adobe Acrobat Services] Las API pueden cambiar tu negoci
     <div>
     <a href="HRAgreementWorkflowsJava.md"><strong>Flujos de trabajo de documentos de HR en Java</strong></a>
     </div>
-    <em>[!DNL Adobe Acrobat Services] Las API incorporan fácilmente funciones de PDF en tus aplicaciones web de RR. HH.</em>
+    <em>[!DNL Adobe Acrobat Services] Las API incorporan fácilmente funciones de PDF en tus aplicaciones web de HR</em>
     <br>
   </td>
   <td>

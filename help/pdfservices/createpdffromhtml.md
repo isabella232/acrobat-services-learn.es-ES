@@ -4,10 +4,11 @@ description: En la API de servicios de PDF, hay varios servicios disponibles par
 type: Tutorial
 role: Developer
 level: Beginner
+feature: PDF Services API
 thumbnail: KT-6673.jpg
 jira: KT-6673
 exl-id: 1bd01bb8-ca5e-4a4a-8646-3d97113e2c51
-source-git-commit: 2d1151c17dfcfa67aca05411976f4ef17adf421b
+source-git-commit: b65ffa3efa3978587564eb0be0c0e7381c8c83ab
 workflow-type: tm+mt
 source-wordcount: '711'
 ht-degree: 0%
@@ -25,17 +26,17 @@ En la API de servicios de PDF, hay varios servicios disponibles para crear y man
 * Cree un archivo de PDF a partir de HTML estáticos o dinámicos, MS Word, PowerPoint, Excel y mucho más
 * Export PDF a MS Word, PowerPoint, Excel y mucho más
 * OCR para reconocer texto en archivos de PDF y permitir la búsqueda de documentos
-* PDF de Protect con contraseña al abrir documentos
+* PDF de Protect con una contraseña al abrir documentos
 * Combinar páginas de PDF o documentos de PDF en un único PDF
 * Comprime los PDF para reducir el tamaño del uso compartido a través de correo electrónico o en línea
 * Alinea para optimizar un PDF para una visualización rápida en la web
-* Organizar páginas de PDF con servicios de inserción, reemplazo, reordenación, eliminación y rotación
+* Organizar páginas de PDF con servicios de inserción, sustitución, reordenación, eliminación y rotación
 
 Los desarrolladores pueden empezar en solo unos minutos con los archivos de muestra listos para ejecutar que se proporcionan para acceder a todos los servicios web disponibles. Así es como empezar.
 
 ## Obtener credenciales y descargar archivos de muestra
 
-El primer paso es obtener una credencial (clave de API) para desbloquear el uso. [Suscríbase a la prueba gratuita aquí](https://www.adobe.com/go/dcsdks_credentials) y haz clic en &#39;Empezar&#39; para crear tus nuevas credenciales.
+El primer paso es obtener una credencial (clave de API) para desbloquear el uso. [Suscríbase a la prueba gratuita aquí](https://www.adobe.com/go/dcsdks_credentials) y haz clic en &#39;Comenzar&#39; para crear tus nuevas credenciales.
 
 ![Clave de API](assets/apikey.png)
 

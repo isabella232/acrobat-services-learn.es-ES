@@ -4,10 +4,11 @@ description: Aprende a crear un PDF de acuerdo de confidencialidad dinámico par
 role: Developer
 level: Intermediate
 type: Tutorial
+feature: Use Cases
 thumbnail: KT-8098.jpg
 jira: KT-8098
 exl-id: f4ec0182-a46e-43aa-aea3-bf1d19f1a4ec
-source-git-commit: 2d1151c17dfcfa67aca05411976f4ef17adf421b
+source-git-commit: b65ffa3efa3978587564eb0be0c0e7381c8c83ab
 workflow-type: tm+mt
 source-wordcount: '1164'
 ht-degree: 3%
@@ -18,17 +19,17 @@ ht-degree: 3%
 
 ![Banner de caso de uso Hero](assets/UseCaseNDAHero.jpg)
 
-Las organizaciones colaboran con colaboradores externos para crear sus servicios y productos. Un acuerdo de confidencialidad (NDA) es un elemento importante de estas colaboraciones. Impide a todas las partes revelar cualquier información confidencial que pueda dañar a cualquiera de las entidades.
+Las organizaciones colaboran con colaboradores externos para crear sus servicios y productos. Un acuerdo de confidencialidad (NDA) es un elemento importante de estas colaboraciones. Impide a todas las partes revelar cualquier información confidencial que pueda perjudicar a cualquiera de las entidades.
 
 El formato de acuerdo de confidencialidad más utilizado es un documento de PDF. Las organizaciones preparan un acuerdo de confidencialidad y lo envían a todas las partes. Luego, una vez que todos han firmado, inician el contrato. En un equipo de gran velocidad, la creación manual de PDF ralentiza el progreso.
 
 ## Lo que puedes aprender
 
-Este tutorial práctico explica cómo crear una plantilla especializada de acuerdo de confidencialidad de Word de Microsoft para su empresa. complemento gratuito de Adobe para Microsoft Word, [Etiquetador de generación de documentos de Adobe](https://opensource.adobe.com/pdftools-sdk-docs/docgen/latest/wordaddin.html#add-in-demo), inserta &quot;tags&quot; para introducir los valores dinámicos. Aprenda a pasar los datos JSON a la plantilla y a crear un PDF dinámico. El PDF resultante puede enviarse por correo electrónico o mostrarse a sus colaboradores en su navegador, en función de los requisitos y objetivos de su empresa. Para continuar, solo necesitas un poco de experiencia con Node.js, JavaScript, Express.js, HTML y CSS.
+Este tutorial práctico explica cómo crear una plantilla especializada de acuerdo de confidencialidad de Word de Microsoft para su empresa. Complemento gratuito de Adobe para Microsoft Word, [Etiquetador de generación de documentos de Adobe](https://opensource.adobe.com/pdftools-sdk-docs/docgen/latest/wordaddin.html#add-in-demo), inserta &quot;tags&quot; para introducir los valores dinámicos. Aprenda a pasar los datos JSON a la plantilla y a crear un PDF dinámico. El PDF resultante puede enviarse por correo electrónico o mostrarse a sus colaboradores en su navegador, en función de los requisitos y objetivos de su empresa. Para seguir los pasos, solo necesitas un poco de experiencia con Node.js, JavaScript, Express.js, HTML y CSS.
 
 ## API y recursos relevantes
 
-Con [!DNL Adobe Acrobat Services]Además, puedes generar documentos de PDF sobre la marcha utilizando datos dinámicos. [!DNL Acrobat Services] ofrece un conjunto de herramientas de PDF, incluida la API de generación de documentos de Adobe para automatizar [Creación de NDA](https://www.adobe.io/apis/documentcloud/dcsdk/nda-creation.html).
+Con [!DNL Adobe Acrobat Services]Además, puedes generar documentos de PDF sobre la marcha utilizando datos dinámicos. [!DNL Acrobat Services] ofrece un conjunto de herramientas de PDF, incluida la API de generación de documentos de Adobe para automatizar [Creación de acuerdo de confidencialidad](https://www.adobe.io/apis/documentcloud/dcsdk/nda-creation.html).
 
 * [API de generación de documentos de Adobe](https://www.adobe.io/apis/documentcloud/dcsdk/doc-generation.html)
 
@@ -86,13 +87,13 @@ Dentro de la pestaña, puede cargar el documento JSON de muestra. Este documento
 
 Seleccionar **Generar etiquetas** para ver los elementos que puede utilizar en la plantilla. Estas son las propiedades extraídas de la estructura JSON, listas para su uso en la plantilla:
 
-![Captura de pantalla de las etiquetas de texto del complemento Generación de documentos](assets/nda_3.png)
+![Captura de pantalla de las etiquetas de texto en el complemento Generación de documentos](assets/nda_3.png)
 
 Estas son las funciones de la `authorizedSigner` campo. Se ajustan otros campos y puede expandir la vista en Microsoft Word. El complemento también ofrece opciones de datos avanzadas, como tablas, listas, valores calculados y mucho más.
 
 ## Creación de etiquetas
 
-No dude en crear una plantilla o importar un [plantilla existente](https://www.adobe.io/apis/documentcloud/dcsdk/doc-generation.html#sample-blade) en Microsoft Word. Una vez configurado el documento, agregue etiquetas a cada campo haciendo clic en los tokens correspondientes del complemento.
+No dude en crear una plantilla o importar un [plantilla existente](https://www.adobe.io/apis/documentcloud/dcsdk/doc-generation.html#sample-blade) en Microsoft Word. Una vez que haya configurado el documento, agregue etiquetas a cada campo haciendo clic en los tokens correspondientes del complemento.
 
 La siguiente plantilla en un archivo de Microsoft Word:
 
@@ -104,7 +105,7 @@ Document Generation Tagger se integra con la API de Adobe Sign. Gracias a esta i
 
 ## Generación del acuerdo de confidencialidad para proveedores
 
-Dentro de la aplicación de ejemplo, ha preparado carpetas para las entradas y salidas. Como se ha mencionado anteriormente, puede utilizar archivos JSON, de modo que haya dos archivos que muestren los proveedores disponibles en el sistema. Los archivos se muestran dentro de un formulario que se imprime en el explorador:
+Dentro de la aplicación de ejemplo, ha preparado carpetas para los datos de entrada y salida. Como se ha mencionado anteriormente, puede utilizar archivos JSON, de modo que haya dos archivos que muestren los proveedores disponibles en el sistema. Los archivos se muestran dentro de un formulario que se imprime en el explorador:
 
 ```
 <h1><b>NDA</b>: Generate for vendor.</h1>
@@ -186,7 +187,7 @@ Para obtener una explicación más detallada del proceso de Adobe Sign, [consult
 
 ## Pasos siguientes
 
-En este tutorial práctico, se utilizó el etiquetador de generación de documentos de Adobe para generar dinámicamente documentos de PDF mediante plantillas de Microsoft Word y archivos de datos JSON. El complemento ayudó a [crear acuerdos de confidencialidad automáticamente](https://www.adobe.io/apis/documentcloud/dcsdk/nda-creation.html) personalizado para cada parte y, a continuación, recopilar firmas mediante la API de Sign.
+En este tutorial práctico, el etiquetador de generación de documentos de Adobe se utilizó para generar dinámicamente documentos de PDF mediante plantillas de Microsoft Word y archivos de datos JSON. El complemento ayudó a [crear acuerdos de confidencialidad automáticamente](https://www.adobe.io/apis/documentcloud/dcsdk/nda-creation.html) personalizado para cada parte y, a continuación, recopilar firmas mediante la API de Sign.
 
-Puedes usar estas técnicas para crear dinámicamente tus propios acuerdos de confidencialidad u otros documentos, lo que libera el tiempo de tu equipo para centrarte en el trabajo productivo. Explorar [[!DNL Adobe Acrobat Services]](https://www.adobe.io/apis/documentcloud/dcsdk/pdf-tools.html) para encontrar API y SDK para el lenguaje y el tiempo de ejecución que prefiera, de modo que pueda agregar funciones de PDF directamente a las aplicaciones para crear rápidamente documentos de PDF. [Primeros pasos](https://www.adobe.io/apis/documentcloud/dcsdk/gettingstarted.html) con una prueba gratis de seis meses
-[pago por uso](https://www.adobe.io/apis/documentcloud/dcsdk/pdf-pricing.html) por solo $0.05 por transacción de documento.
+Puedes usar estas técnicas para crear dinámicamente tus propios acuerdos de confidencialidad u otros documentos, lo que libera el tiempo de tu equipo para centrarte en el trabajo productivo. Explorar [[!DNL Adobe Acrobat Services]](https://www.adobe.io/apis/documentcloud/dcsdk/pdf-tools.html) para encontrar API y SDK para el lenguaje y el tiempo de ejecución que prefiera, de modo que pueda agregar funciones de PDF directamente a las aplicaciones para crear rápidamente documentos de PDF. [Introducción](https://www.adobe.io/apis/documentcloud/dcsdk/gettingstarted.html) con una prueba gratis de seis meses
+[de pago por uso](https://www.adobe.io/apis/documentcloud/dcsdk/pdf-pricing.html) por solo $0.05 por transacción de documento.

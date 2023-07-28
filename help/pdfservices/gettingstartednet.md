@@ -4,11 +4,12 @@ description: Los desarrolladores pueden empezar en solo unos minutos con los arc
 type: Tutorial
 role: Developer
 level: Beginner
+feature: PDF Services API
 thumbnail: KT-6675.jpg
 jira: KT-6675
 keywords: Destacados
 exl-id: 22c59c75-fd99-4467-a6f6-917fb246469a
-source-git-commit: 2d1151c17dfcfa67aca05411976f4ef17adf421b
+source-git-commit: b65ffa3efa3978587564eb0be0c0e7381c8c83ab
 workflow-type: tm+mt
 source-wordcount: '524'
 ht-degree: 0%
@@ -23,7 +24,7 @@ Los desarrolladores pueden empezar en solo unos minutos con los archivos de mues
 
 ## Paso 1: Obtener credenciales y descargar archivos de muestra
 
-El primer paso es obtener una credencial (clave de API) para desbloquear el uso. [Suscríbase a la prueba gratuita aquí](https://www.adobe.io/apis/documentcloud/dcsdk/gettingstarted.html) y haz clic en &#39;Empezar&#39; para crear tus nuevas credenciales.
+El primer paso es obtener una credencial (clave de API) para desbloquear el uso. [Suscríbase a la prueba gratuita aquí](https://www.adobe.io/apis/documentcloud/dcsdk/gettingstarted.html) y haz clic en &#39;Comenzar&#39; para crear tus nuevas credenciales.
 
 ![Paso 1](assets/GettingStartedJava_step1.png)
 
@@ -41,11 +42,11 @@ A continuación, elija Node.js como idioma para recibir los ejemplos específico
 
 Recibirá un archivo .zip para descargar denominado PDFToolsSDK-.NetSamples.zip que se puede guardar en el sistema de archivos local.
 
-## Paso 2: Configure el entorno .Net y ejecute el código de ejemplo
+## Paso 2: Configurar el entorno .Net y ejecutar el código de ejemplo
 
 1. Descargue e instale el [.Net SDK](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install)
-1. Extraiga el **[!UICONTROL PDFToolsSDK-.NetSamples.zip]** y descomprima el contenido
-1. cd al directorio raíz de ejemplos **[!UICONTROL adobe-DC.PDFTools.SDK.NET.Samples]**
+1. Extraiga el archivo descargado **[!UICONTROL PDFToolsSDK-.NetSamples.zip]** y descomprima el contenido
+1. cd al directorio raíz de ejemplos **[!UICONTROL adobe-DC.PDFTools.SDK.NET.Saples]**
 1. En el directorio raíz de ejemplos, ejecute `dotnet build`
 
    C:\Temp\PDFToolsAPI\ PDFToolsSDK-.NetSamples\adobe-DC.PDFTools.SDK.NET.Samples>dotnet build
@@ -66,7 +67,7 @@ El PDF se creará en la ubicación designada en la salida, que de forma predeter
 
 ## Pensamientos finales
 
-La API de servicios de PDF puede ayudarte a eliminar procesos manuales automatizando flujos de trabajo comunes y desplazando la carga de procesamiento a la nube. En un mundo en el que cada navegador trata a PDF de forma diferente, al aprovechar la API Adobe PDF Embed junto con la API de servicios de PDF, puede crear procesos optimizados, fiables y predecibles que se ejecuten y se muestren correctamente **siempre** independientemente de la plataforma o dispositivo.
+La API de servicios de PDF puede ayudarte a eliminar procesos manuales automatizando flujos de trabajo comunes y desplazando la carga de procesamiento a la nube. En un mundo en el que cada navegador trata a PDF de forma diferente, al aprovechar la API Adobe PDF Embed junto con la API de servicios de PDF, puede crear procesos optimizados, fiables y predecibles que se ejecuten y se muestren correctamente **siempre** independientemente de la plataforma o el dispositivo.
 
 ## Recursos y pasos siguientes
 

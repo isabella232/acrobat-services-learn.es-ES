@@ -4,10 +4,11 @@ description: Aprenda a incluir la API de Acrobat Sign en su aplicación para rec
 role: Developer
 level: Intermediate
 type: Tutorial
+feature: Acrobat Sign API
 thumbnail: KT-8089.jpg
 jira: KT-8089
 exl-id: ae1cd9db-9f00-4129-a2a1-ceff1c899a83
-source-git-commit: 2d1151c17dfcfa67aca05411976f4ef17adf421b
+source-git-commit: b65ffa3efa3978587564eb0be0c0e7381c8c83ab
 workflow-type: tm+mt
 source-wordcount: '2058'
 ht-degree: 2%
@@ -28,7 +29,7 @@ Más concretamente, aprende a incluir la API de Acrobat Sign en tu aplicación p
 
 ## Creación de un documento de PDF
 
-Para empezar, cree una plantilla de Microsoft Word y guárdela como PDF. O bien, puede automatizar la canalización mediante la API de generación de documentos para cargar una plantilla creada en Word y, a continuación, generar un documento de PDF. La API de generación de documentos forma parte de [!DNL Acrobat Services], [gratis durante seis meses y luego de pago por solo o $0.05 por transacción de documento](https://www.adobe.io/apis/documentcloud/dcsdk/pdf-pricing.html).
+Empiece creando una plantilla de Microsoft Word y guardándola como PDF. O bien, puede automatizar la canalización mediante la API de generación de documentos para cargar una plantilla creada en Word y, a continuación, generar un documento de PDF. La API de generación de documentos forma parte de [!DNL Acrobat Services], [gratis durante seis meses y luego de pago por solo o $0.05 por transacción de documento](https://www.adobe.io/apis/documentcloud/dcsdk/pdf-pricing.html).
 
 En este ejemplo, la plantilla es solo un documento sencillo con algunos campos de firmante que rellenar. Asigne un nombre a los campos ahora y, a continuación, inserte los campos reales en este tutorial.
 
@@ -40,7 +41,7 @@ Antes de trabajar con la API de Sign, [crear una cuenta de desarrollador gratuit
 
 Adobe distribuye la API de Acrobat Sign por todo el mundo en muchas unidades de implementación llamadas &quot;fragmentos&quot;. Cada recurso compartido sirve a una cuenta de cliente, como NA1, NA2, NA3, EU1, JP1, AU1, IN1 y otros. Los nombres compartidos corresponden a ubicaciones geográficas. Estos fragmentos componen el URI base (puntos de acceso) de los puntos finales de la API.
 
-Para acceder a la API de Sign, primero debe descubrir el punto de acceso correcto para su cuenta, que puede ser api.na1.adobesign.com, api.na4.adobesign.com, api.eu1.adobesign.com u otros, según su ubicación.
+Para acceder a la API de Sign, primero debe descubrir el punto de acceso correcto para su cuenta, que puede ser api.na1.adobesign.com, api.na4.adobesign.com, api.eu1.adobesign.com u otros, en función de su ubicación.
 
 ```
   GET /api/rest/v6/baseUris HTTP/1.1
@@ -92,7 +93,7 @@ Además, la aplicación puede especificar una URL de devolución de llamada para
 
 Los formularios web (antes conocidos como widgets de firma) son documentos alojados que cualquier persona con acceso puede firmar. Algunos ejemplos de formularios web son las hojas de registro, las renuncias y otros documentos a los que muchas personas acceden y firman en línea.
 
-Para crear un nuevo formulario web utilizando la API de Sign, primero debe cargar un documento transitorio. La solicitud del POST al `/widgets` endpoint utiliza el `transientDocumentId` .
+Para crear un nuevo formulario web utilizando la API de Sign, primero debe cargar un documento transitorio. La solicitud del POST al `/widgets` El extremo utiliza el `transientDocumentId` .
 
 En este ejemplo, el formulario web es `ACTIVE`, pero puede crearlo en uno de los tres estados diferentes:
 
@@ -100,7 +101,7 @@ En este ejemplo, el formulario web es `ACTIVE`, pero puede crearlo en uno de los
 
 * CREACIÓN: para agregar o editar campos de formulario en el formulario web
 
-* ACTIVO: para alojar inmediatamente el formulario web
+* ACTIVO: para alojar inmediatamente el formulario web.
 
 También debe definirse la información sobre los participantes del formulario. La `memberInfos` contiene datos sobre los participantes, como el correo electrónico. Actualmente, este conjunto no admite más de un miembro. Sin embargo, como el correo electrónico del firmante del formulario web no se conoce en el momento de la creación del formulario web, el correo electrónico debe dejarse vacío, como en el ejemplo siguiente. La `role` define la función asumida por los miembros en el `memberInfos` (por ejemplo, el FIRMANTE y EL APROBADOR).
 
@@ -183,7 +184,7 @@ Este extremo devuelve una lista para que pueda encontrar el formulario específi
 
 ## Administrar el formulario web
 
-Este formulario es un documento de PDF que los usuarios deben rellenar. Sin embargo, aún debe indicar al editor del formulario qué campos deben rellenar los usuarios y dónde se encuentran dentro del documento:
+Este formulario es un documento de PDF que los usuarios deben rellenar. Sin embargo, todavía tiene que indicar al editor del formulario qué campos deben rellenar los usuarios y dónde se encuentran dentro del documento:
 
 ![Captura de pantalla del formulario de seguro con algunos campos](assets/GSASAPI_1.png)
 
@@ -207,7 +208,7 @@ El editor le permite arrastrar y soltar campos de texto y firma. Después de agr
 
 Después de finalizar el formulario web, debe enviarlo para que los usuarios puedan rellenarlo y firmarlo. Una vez guardado el formulario, puede ver y copiar la dirección URL y el código incrustado.
 
-**Copiar URL de formulario web**: utilice esta dirección URL para enviar a los usuarios a una versión alojada de este acuerdo para que la revisen y la firmen. Por ejemplo:
+**Copiar URL de formulario web**: utilice esta dirección URL para enviar a los usuarios a una versión alojada de este acuerdo para su revisión y firma. Por ejemplo:
 
 [https://secure.na4.adobesign.com/public/esignWidget?wid=CBFCIBAA3...babw\*](https://secure.na4.adobesign.com/public/esignWidget?wid=CBFCIBAA3AAABLblqZhCndYscuKcDMPiVfQlpaGPb-5D7ebE9NUTQ6x6jK7PIs8HCtTzr3HOx8U6D5qqbabw*)
 
@@ -229,7 +230,7 @@ Cuando los usuarios obtienen acceso a la versión alojada del formulario, revisa
 
 ![Captura de pantalla del formulario web final](assets/GSASAPI_7.png)
 
-A continuación, el usuario rellena los campos y firma el formulario.
+El usuario rellena los campos y firma el formulario.
 
 ![Captura de pantalla del usuario que selecciona el campo Firma](assets/GSASAPI_8.png)
 
@@ -326,7 +327,7 @@ Para cambiar el estado de un acuerdo, utilice el `PUT /agreements/{agreementId}/
 
 * IN_PROCESS a CANCELLED
 
-La `participantSetsInfo` la propiedad anterior proporciona correos electrónicos de las personas que se espera que participen en el acuerdo y qué acción realizan (firmar, aprobar, reconocer, etc.). En el ejemplo anterior, sólo hay un participante: el firmante. Las firmas escritas están limitadas a cuatro por documento.
+La `participantSetsInfo` la propiedad anterior proporciona correos electrónicos de las personas que se espera que participen en el acuerdo y qué acción realizan (firmar, aprobar, reconocer, etc.). En el ejemplo anterior, solo hay un participante: el firmante. Las firmas escritas están limitadas a cuatro por documento.
 
 A diferencia de los formularios web, cuando se crea un acuerdo, Adobe lo envía automáticamente para que se firme. El punto final devuelve el identificador único del acuerdo.
 
@@ -341,7 +342,7 @@ A diferencia de los formularios web, cuando se crea un acuerdo, Adobe lo envía 
 
 ## Recuperar información sobre los miembros del acuerdo
 
-Una vez creado un acuerdo, puede utilizar la `/agreements/{agreementId}/members` terminal para recuperar información sobre los miembros del acuerdo. Por ejemplo, puede comprobar si un participante ha firmado el acuerdo.
+Una vez que haya creado un acuerdo, puede utilizar la `/agreements/{agreementId}/members` punto final para recuperar información sobre los miembros del acuerdo. Por ejemplo, puede comprobar si un participante ha firmado el acuerdo.
 
 ```
 GET /api/rest/v6/agreements/{agreementId}/members HTTP/1.1
@@ -350,7 +351,7 @@ Authorization: Bearer {YOUR-INTEGRATION-KEY-HERE}
 Accept: application/json
 ```
 
-El cuerpo de respuesta JSON resultante contiene información sobre los participantes.
+El cuerpo de respuesta de JSON resultante contiene información sobre los participantes.
 
 ```
   Response Body:
@@ -382,11 +383,11 @@ El cuerpo de respuesta JSON resultante contiene información sobre los participa
 
 ## Envío de recordatorios de acuerdos
 
-Según las reglas de negocio, un plazo puede impedir a los participantes firmar el acuerdo después de una fecha específica. Si el acuerdo tiene una fecha de caducidad, puede recordárselo a los participantes cuando se acerque.
+En función de las reglas de negocio, un plazo puede impedir a los participantes firmar el acuerdo después de una fecha específica. Si el acuerdo tiene una fecha de caducidad, puede recordárselo a los participantes cuando se acerque.
 
 Según la información de los miembros del acuerdo que recibió después de la llamada al `/agreements/{agreementId}/members` punto final en la última sección, puede enviar recordatorios por correo electrónico a todos los participantes que aún no hayan firmado el acuerdo.
 
-Una solicitud del POST al `/agreements/{agreementId}/reminders` terminal crea un recordatorio para los participantes especificados de un acuerdo identificado por el `agreementId` parámetro.
+Una solicitud del POST al `/agreements/{agreementId}/reminders` punto final crea un recordatorio para los participantes especificados de un acuerdo identificado por el `agreementId` parámetro.
 
 ```
 POST /agreements/{agreementId}/reminders HTTP/1.1

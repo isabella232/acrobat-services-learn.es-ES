@@ -4,11 +4,12 @@ description: Con OCR (reconocimiento óptico de caracteres) puede desbloquear PD
 type: Tutorial
 role: Developer
 level: Beginner
+feature: PDF Services API
 thumbnail: KT-6677.jpg
 jira: KT-6677
 keywords: Héroe
 exl-id: 61a9a2d1-94c3-41c2-8f90-a56a938ef245
-source-git-commit: 2d1151c17dfcfa67aca05411976f4ef17adf421b
+source-git-commit: b65ffa3efa3978587564eb0be0c0e7381c8c83ab
 workflow-type: tm+mt
 source-wordcount: '600'
 ht-degree: 4%
@@ -27,7 +28,7 @@ En este tutorial se describen los conceptos básicos sobre cómo ejecutar la pri
 
 ## Paso 1: Cree sus credenciales y configure su entorno
 
-Utilice los siguientes tutoriales de introducción para crear credenciales de API, descargar archivos de muestra y configurar el entorno.
+Utilice los tutoriales de introducción que se indican a continuación para crear credenciales de API, descargar archivos de muestra y configurar el entorno.
 
 [Introducción a la API de servicios de PDF y Java](gettingstartedjava.md)
 
@@ -41,9 +42,9 @@ Nuestra operación de OCR permite la configuración regional en inglés de forma
 
 Al pasar opciones con la operación de OCR, incluida una configuración regional específica, el método también acepta el parámetro &#39;type&#39;, que tiene dos opciones:
 
-* SEARCHABLE_IMAGE: Modifica la imagen original durante el proceso de limpieza (por ejemplo, la escribe) antes de colocar una capa de texto invisible sobre ella. Este tipo elimina artefactos no deseados y puede dar como resultado un documento más legible en algunos casos.
+* SEARCHABLE_IMAGE: Modifica la imagen original durante el proceso de limpieza (por ejemplo, la corrige) antes de colocar una capa de texto invisible sobre ella. Este tipo elimina artefactos no deseados y puede dar como resultado un documento más legible en algunos casos.
 
-* SEARCHABLE_IMAGE_EXACT: Garantiza que el texto se pueda buscar y seleccionar. Esta opción mantiene la imagen original y coloca sobre ella una capa de texto invisible. Recomendada para casos que requieran máxima fidelidad a la imagen original.
+* SEARCHABLE_IMAGE_EXACT: garantiza que el texto se pueda buscar y seleccionar. Esta opción mantiene la imagen original y coloca sobre ella una capa de texto invisible. Recomendada para casos que requieran máxima fidelidad a la imagen original.
 
 **Java**
 
