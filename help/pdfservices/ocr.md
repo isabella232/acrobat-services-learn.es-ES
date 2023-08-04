@@ -1,17 +1,16 @@
 ---
 title: Uso de la API de servicios de Adobe PDF para archivos del PDF de OCR
 description: Con OCR (reconocimiento óptico de caracteres) puede desbloquear PDF digitalizados para extraer texto y crear archivos que se puedan buscar
-type: Tutorial
+feature: PDF Services API
 role: Developer
 level: Beginner
-feature: PDF Services API
-thumbnail: KT-6677.jpg
+type: Tutorial
 jira: KT-6677
-keywords: Héroe
+thumbnail: KT-6677.jpg
 exl-id: 61a9a2d1-94c3-41c2-8f90-a56a938ef245
-source-git-commit: b65ffa3efa3978587564eb0be0c0e7381c8c83ab
+source-git-commit: 5222e1626f4e79c02298e81d621216469753ca72
 workflow-type: tm+mt
-source-wordcount: '600'
+source-wordcount: '599'
 ht-degree: 4%
 
 ---

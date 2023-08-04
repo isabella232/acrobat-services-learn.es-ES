@@ -1,14 +1,14 @@
 ---
 title: Uso de la API de servicios de PDF para exportar un PDF a Word, PowerPoint y mucho más
 description: Aprenda a ejecutar la operación de exportación de la API de Servicios de PDF mediante archivos de ejemplo para los lenguajes Node.js, Java y .Net
-type: Tutorial
+feature: PDF Services API
 role: Developer
 level: Intermediate
-feature: PDF Services API
+type: Tutorial
+jira: KT-6674
 thumbnail: KT-6674.jpg
-kt: 6674
 exl-id: 55f5b04e-0249-47d9-9131-2f9ec01db7e8
-source-git-commit: b65ffa3efa3978587564eb0be0c0e7381c8c83ab
+source-git-commit: 5222e1626f4e79c02298e81d621216469753ca72
 workflow-type: tm+mt
 source-wordcount: '500'
 ht-degree: 5%
