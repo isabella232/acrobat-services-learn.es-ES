@@ -8,16 +8,14 @@ type: Tutorial
 jira: KT-8089
 thumbnail: KT-8089.jpg
 exl-id: ae1cd9db-9f00-4129-a2a1-ceff1c899a83
-source-git-commit: 5222e1626f4e79c02298e81d621216469753ca72
+source-git-commit: 2f01f306f5d13bfbaa61442e0e7a89537a62c33c
 workflow-type: tm+mt
-source-wordcount: '2058'
+source-wordcount: '2054'
 ht-degree: 2%
 
 ---
 
 # Introducción a la API de Adobe Sign
-
-![Banner de caso de uso Hero](assets/UseCaseStartedHero.jpg)
 
 [API de Acrobat Sign](https://www.adobe.io/apis/documentcloud/sign.html) es una excelente forma de mejorar la forma de administrar los acuerdos firmados. Los desarrolladores pueden integrar fácilmente sus sistemas con la API de Sign, que proporciona una forma fiable y sencilla de cargar documentos, enviarlos para su firma, enviar recordatorios y recopilar firmas electrónicas.
 

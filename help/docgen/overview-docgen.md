@@ -8,17 +8,15 @@ type: Tutorial
 jira: 7480
 thumbnail: KT-7480.jpg
 exl-id: 519a41a2-33af-4022-8919-2cb69995c46c
-source-git-commit: 5222e1626f4e79c02298e81d621216469753ca72
+source-git-commit: e2debb7ef139f890cdfc158f7634ee5c836fab32
 workflow-type: tm+mt
-source-wordcount: '307'
+source-wordcount: '303'
 ht-degree: 0%
 
 ---
 
 
 # Tutoriales de la API Document Generation
-
-![Banner de API de generación de documentos](../assets/docgenhero.jpg)
 
 La API de generación de documentos crea documentos de PDF y Word a partir de plantillas de Word y datos JSON.
 

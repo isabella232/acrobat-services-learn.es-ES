@@ -8,16 +8,14 @@ type: Tutorial
 jira: KT-8117
 thumbnail: KT-8117.jpg
 exl-id: 2fef89cf-640d-4ff4-9282-070bce8bba78
-source-git-commit: 5222e1626f4e79c02298e81d621216469753ca72
+source-git-commit: e2debb7ef139f890cdfc158f7634ee5c836fab32
 workflow-type: tm+mt
-source-wordcount: '139'
+source-wordcount: '135'
 ht-degree: 0%
 
 ---
 
 # Tutoriales de la API Adobe PDF Embed
-
-![Banner de API de incrustación de PDF](../assets/pdfembedhero.jpg)
 
 La API PDF Embed es una API de JavaScript gratuita para incorporar PDF de alta fidelidad, permitir la colaboración y ver análisis.
 
